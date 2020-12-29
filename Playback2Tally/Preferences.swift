@@ -1,6 +1,6 @@
 import Cocoa
+import Defaults
 import Preferences
-import SwiftyUserDefaults
 
 extension Preferences.PaneIdentifier {
     static let general = Self("general")
@@ -8,23 +8,23 @@ extension Preferences.PaneIdentifier {
     static let tally = Self("tally")
 }
 
-enum PlaybackVariant: String, CaseIterable, DefaultsSerializable {
+enum PlaybackVariant: String, CaseIterable, Codable {
     case mitti = "Mitti"
 }
 
-extension DefaultsKeys {
-    var udmHost: DefaultsKey<String> { .init("udmHost", defaultValue: "") }
-    var udmPort: DefaultsKey<Int> { .init("udmPort", defaultValue: 5727)}
-    var udmAddressCueName: DefaultsKey<Int> { .init("udmAddressCueName", defaultValue: 0)}
-    var udmAddressTimeTotal: DefaultsKey<Int> { .init("udmAddressTimeTotal", defaultValue: 1)}
-    var udmAddressTimeLeft: DefaultsKey<Int> { .init("udmAddressTimeLeft", defaultValue: 2)}
-    var udmAddressTimeElapsed: DefaultsKey<Int> { .init("udmAddressTimeElapsed", defaultValue: 3)}
-    var udmAddressPreviousCueName: DefaultsKey<Int> { .init("udmAddressPreviousCueName", defaultValue: 4)}
-    var udmAddressNextCueName: DefaultsKey<Int> { .init("udmAddressNextCueName", defaultValue: 5)}
+extension Defaults.Keys {
+    static let udmHost = Key<String>("udmHost", default: "")
+    static let udmPort = Key<Int>("udmPort", default: 5727)
+    static let udmAddressCueName = Key<Int>("udmAddressCueName", default: 0)
+    static let udmAddressTimeTotal = Key<Int>("udmAddressTimeTotal", default: 1)
+    static let udmAddressTimeLeft = Key<Int>("udmAddressTimeLeft", default: 2)
+    static let udmAddressTimeElapsed = Key<Int>("udmAddressTimeElapsed", default: 3)
+    static let udmAddressPreviousCueName = Key<Int>("udmAddressPreviousCueName", default: 4)
+    static let udmAddressNextCueName = Key<Int>("udmAddressNextCueName", default: 5)
 
-    var playbackVariant: DefaultsKey<PlaybackVariant> { .init("playbackVariant", defaultValue: .mitti)}
+    static let playbackVariant = Key<PlaybackVariant>("playbackVariant", default: .mitti)
 
-    var mittiFeedbackPort: DefaultsKey<Int> { .init("mittiFeedbackPort", defaultValue: 1234)}
-    var mittiHost: DefaultsKey<String> { .init("mittiHost", defaultValue: "localhost")}
-    var mittiPort: DefaultsKey<Int> { .init("mittiPort", defaultValue: 51000) }
+    static let mittiFeedbackPort = Key<Int>("mittiFeedbackPort", default: 1234)
+    static let mittiHost = Key<String>("mittiHost", default: "localhost")
+    static let mittiPort = Key<Int>("mittiPort", default: 51000)
 }

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PlaybackPreferenceViewController" customModule="PlaybackToTally" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PlaybackPreferenceViewController" customModule="Playback2Tally" customModuleProvider="target">
             <connections>
                 <outlet property="mittiFeedbackPortField" destination="avg-Ve-iWB" id="57f-u8-9Zc"/>
                 <outlet property="mittiHostField" destination="AaE-PR-ibN" id="PXy-0z-Uax"/>

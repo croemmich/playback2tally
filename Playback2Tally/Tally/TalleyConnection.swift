@@ -41,9 +41,9 @@ class TalleyConnection: NSObject {
 
     func disconnect() {
         lock.lock()
-        if (connection != nil) {
-            connection.cancel()
-        }
+        connection?.cancel()
+        connection = nil
+        lock.unlock()
     }
 
     func send(packet: UDMPacket) {

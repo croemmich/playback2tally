@@ -25,7 +25,6 @@
 		D7792DF22599E855005B8158 /* PlaybackPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */; };
 		D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */; };
 		D7792DFC259A678A005B8158 /* TallyPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */; };
-		D7792E01259A6B3A005B8158 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */; };
 		D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792E0A259BB5CC005B8158 /* Manager.swift */; };
 		D7792E11259BC182005B8158 /* StatusMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792E10259BC182005B8158 /* StatusMenuState.swift */; };
 		D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986CA02598E20700CB0F6D /* AppDelegate.swift */; };
@@ -35,6 +34,7 @@
 		D7986CD72598E23400CB0F6D /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = D7986CD62598E23400CB0F6D /* OSCKit */; };
 		D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D802598FA1000CB0F6D /* Preferences.swift */; };
 		D7986D832598FA1000CB0F6D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D812598FA1000CB0F6D /* State.swift */; };
+		D7E7644B259BF2CF003ED745 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = D7E7644A259BF2CF003ED745 /* Defaults */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,10 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E7644B259BF2CF003ED745 /* Defaults in Frameworks */,
 				D7792D7F25998F23005B8158 /* LaunchAtLogin in Frameworks */,
 				D7792DD22599DB6F005B8158 /* Preferences in Frameworks */,
 				D7986CD72598E23400CB0F6D /* OSCKit in Frameworks */,
-				D7792E01259A6B3A005B8158 /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +261,7 @@
 				D7986CD62598E23400CB0F6D /* OSCKit */,
 				D7792D7E25998F23005B8158 /* LaunchAtLogin */,
 				D7792DD12599DB6F005B8158 /* Preferences */,
-				D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */,
+				D7E7644A259BF2CF003ED745 /* Defaults */,
 			);
 			productName = PlaybackToTally;
 			productReference = D7986C9D2598E20700CB0F6D /* Playback2Tally.app */;
@@ -339,6 +339,7 @@
 				D7792D7D25998F23005B8158 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				D7792DBB2599BCDE005B8158 /* XCRemoteSwiftPackageReference "Preferences" */,
 				D7792DFF259A6B3A005B8158 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+				D7E76449259BF2CF003ED745 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = D7986C9E2598E20700CB0F6D /* Products */;
 			projectDirPath = "";
@@ -778,6 +779,14 @@
 				minimumVersion = 2.1.0;
 			};
 		};
+		D7E76449259BF2CF003ED745 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -791,15 +800,15 @@
 			package = D7792DBB2599BCDE005B8158 /* XCRemoteSwiftPackageReference "Preferences" */;
 			productName = Preferences;
 		};
-		D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7792DFF259A6B3A005B8158 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
-			productName = SwiftyUserDefaults;
-		};
 		D7986CD62598E23400CB0F6D /* OSCKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D7986CD52598E23400CB0F6D /* XCRemoteSwiftPackageReference "OSCKit" */;
 			productName = OSCKit;
+		};
+		D7E7644A259BF2CF003ED745 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7E76449259BF2CF003ED745 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

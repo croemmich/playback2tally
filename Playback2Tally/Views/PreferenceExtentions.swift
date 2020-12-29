@@ -1,15 +1,15 @@
 import Cocoa
+import Defaults
 import Preferences
-import SwiftyUserDefaults
 
 extension PreferencePane {
     
     typealias StringValidator = (String) -> (valid: Bool, message: String?)
     
-    func validateAndSetStringField(field: NSTextField, key: DefaultsKey<String>, validator: StringValidator? = nil) {
+    func validateAndSetStringField(field: NSTextField, key: Defaults.Key<String>, validator: StringValidator? = nil) {
         if (field.stringValue == "") {
-            Defaults.remove(key)
-            field.stringValue = Defaults[key: key]
+            Defaults.reset(key)
+            field.stringValue = Defaults[key]
         }
         
         if (validator != nil) {
@@ -22,15 +22,15 @@ extension PreferencePane {
             }
         }
         
-        Defaults[key: key] = field.stringValue
+        Defaults[key] = field.stringValue
     }
     
     typealias IntValidator = (Int) -> (valid: Bool, message: String?)
     
-    func validateAndSetIntField(field: NSTextField, key: DefaultsKey<Int>, validator: IntValidator? = nil) {
+    func validateAndSetIntField(field: NSTextField, key: Defaults.Key<Int>, validator: IntValidator? = nil) {
         if (field.integerValue == 0) {
-            Defaults.remove(key)
-            field.integerValue = Defaults[key: key]
+            Defaults.reset(key)
+            field.integerValue = Defaults[key]
         }
         
         if (validator != nil) {
@@ -43,7 +43,7 @@ extension PreferencePane {
             }
         }
         
-        Defaults[key: key] = field.integerValue
+        Defaults[key] = field.integerValue
     }
     
     func displayError(field: NSView, message: String?) {

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferenceViewController" customModule="PlaybackToTally" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferenceViewController" customModule="Playback2Tally" customModuleProvider="target">
             <connections>
                 <outlet property="copyrightLabel" destination="AYD-TM-W8b" id="dmv-jd-Rkg"/>
                 <outlet property="versionLabel" destination="8Ka-Rj-I43" id="lDg-23-2DY"/>

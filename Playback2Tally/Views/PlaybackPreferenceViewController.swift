@@ -1,6 +1,6 @@
 import Cocoa
+import Defaults
 import Preferences
-import SwiftyUserDefaults
 
 final class PlaybackPreferenceViewController: NSViewController, PreferencePane, NSTextFieldDelegate {
     let preferencePaneIdentifier = Preferences.PaneIdentifier.playback
@@ -24,16 +24,16 @@ final class PlaybackPreferenceViewController: NSViewController, PreferencePane, 
         for varient in PlaybackVariant.allCases {
             playbackType.addItem(withTitle: varient.rawValue)
         }
-        playbackType.selectItem(withTitle: Defaults.playbackVariant.rawValue)
+        playbackType.selectItem(withTitle: Defaults[.playbackVariant].rawValue)
         selectPrefrenceView()
         
         // set up mitti fields
-        mittiFeedbackPortField.integerValue = Defaults.mittiFeedbackPort
+        mittiFeedbackPortField.integerValue = Defaults[.mittiFeedbackPort]
         mittiFeedbackPortField.formatter = portNumberValidator()
         
-        mittiHostField.stringValue = Defaults.mittiHost
+        mittiHostField.stringValue = Defaults[.mittiHost]
         
-        mittiPortField.integerValue = Defaults.mittiPort
+        mittiPortField.integerValue = Defaults[.mittiPort]
         mittiPortField.formatter = portNumberValidator()
     }
     
@@ -41,11 +41,11 @@ final class PlaybackPreferenceViewController: NSViewController, PreferencePane, 
         if let sender = obj.object as? NSTextField {
             switch sender {
             case mittiFeedbackPortField:
-                validateAndSetIntField(field: mittiFeedbackPortField, key: Defaults.keyStore.mittiFeedbackPort)
+                validateAndSetIntField(field: mittiFeedbackPortField, key: Defaults.Keys.mittiFeedbackPort)
             case mittiHostField:
-                validateAndSetStringField(field: mittiHostField, key: Defaults.keyStore.mittiHost, validator: notEmptyStringValidator())
+                validateAndSetStringField(field: mittiHostField, key: Defaults.Keys.mittiHost, validator: notEmptyStringValidator())
             case mittiPortField:
-                validateAndSetIntField(field: mittiPortField, key: Defaults.keyStore.mittiPort)
+                validateAndSetIntField(field: mittiPortField, key: Defaults.Keys.mittiPort)
             default:
                 break
             }
@@ -54,13 +54,13 @@ final class PlaybackPreferenceViewController: NSViewController, PreferencePane, 
     
     @IBAction func onPlaybackTypeChanged(_ sender: Any) {
         if let sender = sender as? NSPopUpButton {
-            Defaults.playbackVariant = PlaybackVariant.init(rawValue: sender.selectedItem!.title)!
+            Defaults[.playbackVariant] = PlaybackVariant.init(rawValue: sender.selectedItem!.title)!
             selectPrefrenceView()
         }
     }
     
     func selectPrefrenceView() {
-        switch Defaults.playbackVariant {
+        switch Defaults[.playbackVariant] {
         case .mitti:
             mittiPrefrences.isHidden = false
         }

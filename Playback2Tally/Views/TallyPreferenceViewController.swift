@@ -1,6 +1,6 @@
 import Cocoa
+import Defaults
 import Preferences
-import SwiftyUserDefaults
 
 final class TallyPreferenceViewController: NSViewController, PreferencePane, NSTextFieldDelegate {
     let preferencePaneIdentifier = Preferences.PaneIdentifier.tally
@@ -22,9 +22,9 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        udmHostField.stringValue = Defaults.udmHost
+        udmHostField.stringValue = Defaults[.udmHost]
         
-        udmPortField.integerValue = Defaults.udmPort
+        udmPortField.integerValue = Defaults[.udmPort]
         udmPortField.formatter = portNumberValidator()
   
         addressPopUps = [udmAddressCueName, udmAddressTotalTime, udmAddressTimeLeft, udmAddressTimeElapsed, udmAddressPreviousCueName, udmAddressNextCueName]
@@ -32,12 +32,12 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
             buildUdmAddressMenu(popup.menu!)
             popup.autoenablesItems = false
         }
-        udmAddressCueName.selectItem(withTag: Defaults.udmAddressCueName)
-        udmAddressTotalTime.selectItem(withTag: Defaults.udmAddressTimeTotal)
-        udmAddressTimeLeft.selectItem(withTag: Defaults.udmAddressTimeLeft)
-        udmAddressTimeElapsed.selectItem(withTag: Defaults.udmAddressTimeElapsed)
-        udmAddressPreviousCueName.selectItem(withTag: Defaults.udmAddressPreviousCueName)
-        udmAddressNextCueName.selectItem(withTag: Defaults.udmAddressNextCueName)
+        udmAddressCueName.selectItem(withTag: Defaults[.udmAddressCueName])
+        udmAddressTotalTime.selectItem(withTag: Defaults[.udmAddressTimeTotal])
+        udmAddressTimeLeft.selectItem(withTag: Defaults[.udmAddressTimeLeft])
+        udmAddressTimeElapsed.selectItem(withTag: Defaults[.udmAddressTimeElapsed])
+        udmAddressPreviousCueName.selectItem(withTag: Defaults[.udmAddressPreviousCueName])
+        udmAddressNextCueName.selectItem(withTag: Defaults[.udmAddressNextCueName])
         
         calculateEnabledAddressEntries()
     }
@@ -62,9 +62,9 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
         if let sender = obj.object as? NSTextField {
             switch sender {
             case udmHostField:
-                validateAndSetStringField(field: udmHostField, key: Defaults.keyStore.udmHost, validator: notEmptyStringValidator())
+                validateAndSetStringField(field: udmHostField, key: Defaults.Keys.udmHost, validator: notEmptyStringValidator())
             case udmPortField:
-                validateAndSetIntField(field: udmPortField, key: Defaults.keyStore.udmPort)
+                validateAndSetIntField(field: udmPortField, key: Defaults.Keys.udmPort)
             default:
                 break
             }
@@ -75,17 +75,17 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
         if let sender = sender as? NSPopUpButton {
             switch sender {
             case udmAddressCueName:
-                Defaults.udmAddressCueName = sender.selectedTag()
+                Defaults[.udmAddressCueName] = sender.selectedTag()
             case udmAddressTotalTime:
-                Defaults.udmAddressTimeTotal = sender.selectedTag()
+                Defaults[.udmAddressTimeTotal] = sender.selectedTag()
             case udmAddressTimeLeft:
-                Defaults.udmAddressTimeLeft = sender.selectedTag()
+                Defaults[.udmAddressTimeLeft] = sender.selectedTag()
             case udmAddressTimeElapsed:
-                Defaults.udmAddressTimeElapsed = sender.selectedTag()
+                Defaults[.udmAddressTimeElapsed] = sender.selectedTag()
             case udmAddressPreviousCueName:
-                Defaults.udmAddressPreviousCueName = sender.selectedTag()
+                Defaults[.udmAddressPreviousCueName] = sender.selectedTag()
             case udmAddressNextCueName:
-                Defaults.udmAddressNextCueName = sender.selectedTag()
+                Defaults[.udmAddressNextCueName] = sender.selectedTag()
             default:
                 break
             }

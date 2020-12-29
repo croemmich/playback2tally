@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TallyPreferenceViewController" customModule="PlaybackToTally" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="TallyPreferenceViewController" customModule="Playback2Tally" customModuleProvider="target">
             <connections>
                 <outlet property="udmAddressCueName" destination="9G7-20-kVX" id="XAK-0m-SGf"/>
                 <outlet property="udmAddressNextCueName" destination="3W1-m8-yQV" id="s46-lT-Yrz"/>

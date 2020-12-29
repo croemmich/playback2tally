@@ -1,7 +1,5 @@
 import Cocoa
-
 import Preferences
-import SwiftyUserDefaults
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -9,14 +7,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     @IBOutlet weak var menu: NSMenu!
     
     var statusMenu: StatusMenuState?
-    
-    var mitti: Mitti!
-    var tally: TalleyConnection!
+    var manager: Manager!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-                
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateState(_:)), name: .didUpdateState, object: nil)
         
         statusMenu = StatusMenuState(menu)
         statusMenu?.bind(menu)
@@ -25,36 +19,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.setActivationPolicy(.accessory)
         
-        mitti = Mitti(feedbackPort: UInt16(Defaults.mittiFeedbackPort))
-        do {
-            try mitti.start()
-        } catch {
-            print("Unexpected error: \(error).")
-        }
-        
-        tally = TalleyConnection(host: Defaults.udmHost, port: Defaults.udmPort)
+        manager = Manager()
+        manager.start()
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        try! mitti.stop()
-
+        manager?.stop()
         statusMenu?.unbind()
         
         return NSApplication.TerminateReply.terminateNow
     }
     
-
-    @objc func onDidUpdateState(_ notification: Notification) {
-        let state = notification.userInfo!["state"] as! State
-        
-        print("Observed state: playing: \(state.playing) cueName: \(state.cueName) timeTotal: \(state.timeTotal) timeLeft: \(state.timeLeft) timeElapsed: \(state.timeElapsed) previousCueName: \(state.previousCueName) nextCueName: \(state.nextCueName)")
-
-        let builder = UDMPacketBuilder()
-        if (state.playing) {
-            builder.display(text: String(Int(state.timeLeft))).tally1().brightnessFull()
-        }
-        tally.send(packet: builder.build())
-    }
     
     lazy var preferencesWindowController = PreferencesWindowController(
         preferencePanes: [

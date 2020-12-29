@@ -1,5 +1,4 @@
 import Cocoa
-import Foundation
 import Preferences
 
 class StatusMenuState: NSObject, NSMenuDelegate {

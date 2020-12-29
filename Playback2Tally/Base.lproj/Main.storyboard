@@ -78,7 +78,7 @@
                 </application>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PlaybackToTally" customModuleProvider="target">
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Playback2Tally" customModuleProvider="target">
                     <connections>
                         <outlet property="menu" destination="uQy-DD-JDr" id="czB-HU-NOm"/>
                     </connections>
