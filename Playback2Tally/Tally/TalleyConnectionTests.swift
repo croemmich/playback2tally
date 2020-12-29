@@ -1,7 +1,7 @@
 import XCTest
 import Network
 
-@testable import PlaybackToTally
+@testable import Playback2Tally
 
 class TalleyConnectionTests: XCTestCase {
     

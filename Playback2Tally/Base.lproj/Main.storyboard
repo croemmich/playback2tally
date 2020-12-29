@@ -11,44 +11,57 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="PlaybackToTally" id="1Xt-HY-uBw">
+                            <menuItem title="Playback2Tally" id="yhf-JS-HnG">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="PlaybackToTally" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Playback2Tally" id="AYz-dn-9dH">
                                     <items>
-                                        <menuItem title="Status" enabled="NO" id="CkJ-sw-RkB">
+                                        <menuItem title="About" id="AKE-Vo-Ot5" userLabel="About ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="0WT-uH-CPJ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="U80-pn-Dmt"/>
+                                        <menuItem title="Quit" keyEquivalent="q" id="pjC-18-jMU" userLabel="Quit">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="TuX-wd-0Mw"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Status" id="1Xt-HY-uBw" userLabel="Status">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Status" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="Status" tag="1" enabled="NO" id="CkJ-sw-RkB">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Cue" enabled="NO" id="h8g-gj-ddm">
+                                        <menuItem title="Cue" tag="2" enabled="NO" id="h8g-gj-ddm">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Time Total" enabled="NO" id="Qn8-eZ-UlU">
+                                        <menuItem title="Time Total" tag="3" enabled="NO" id="Qn8-eZ-UlU">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Time Left" enabled="NO" id="YCC-OD-5AB">
+                                        <menuItem title="Time Left" tag="4" enabled="NO" id="YCC-OD-5AB">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Time Elapsed" enabled="NO" id="S8T-wY-Mb6" userLabel="Time Elapsed">
+                                        <menuItem title="Time Elapsed" tag="5" enabled="NO" id="S8T-wY-Mb6" userLabel="Time Elapsed">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Prev Cue" enabled="NO" id="M8M-FH-A2q" userLabel="Previous Cue">
+                                        <menuItem title="Prev Cue" tag="6" enabled="NO" id="M8M-FH-A2q" userLabel="Previous Cue">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Next Cue" enabled="NO" id="k4v-Qw-BK7">
+                                        <menuItem title="Next Cue" tag="7" enabled="NO" id="k4v-Qw-BK7">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="iId-2I-wrD"/>
+                                                <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="muk-yO-qNv"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="About" id="5kV-Vb-QxS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem title="Quit" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
@@ -67,14 +80,7 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PlaybackToTally" customModuleProvider="target">
                     <connections>
-                        <outlet property="cueMenuItem" destination="h8g-gj-ddm" id="8DW-QH-UOM"/>
                         <outlet property="menu" destination="uQy-DD-JDr" id="czB-HU-NOm"/>
-                        <outlet property="nextCueMenuItem" destination="k4v-Qw-BK7" id="J1L-UK-MXF"/>
-                        <outlet property="previousCueMenuItem" destination="M8M-FH-A2q" id="Ucr-Ox-Iax"/>
-                        <outlet property="statusMenuItem" destination="CkJ-sw-RkB" id="aKz-f8-EhO"/>
-                        <outlet property="timeElapsedMenuItem" destination="S8T-wY-Mb6" id="u9S-td-1J2"/>
-                        <outlet property="timeLeftMenuItem" destination="YCC-OD-5AB" id="ENa-XQ-eDS"/>
-                        <outlet property="timeTotalMenuItem" destination="Qn8-eZ-UlU" id="hL6-Zk-ekm"/>
                     </connections>
                 </customObject>
             </objects>

@@ -26,6 +26,8 @@
 		D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */; };
 		D7792DFC259A678A005B8158 /* TallyPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */; };
 		D7792E01259A6B3A005B8158 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */; };
+		D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792E0A259BB5CC005B8158 /* Manager.swift */; };
+		D7792E11259BC182005B8158 /* StatusMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792E10259BC182005B8158 /* StatusMenuState.swift */; };
 		D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986CA02598E20700CB0F6D /* AppDelegate.swift */; };
 		D7986CA52598E20800CB0F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7986CA42598E20800CB0F6D /* Assets.xcassets */; };
 		D7986CA82598E20800CB0F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7986CA62598E20800CB0F6D /* Main.storyboard */; };
@@ -83,14 +85,16 @@
 		D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaybackPreferenceViewController.xib; sourceTree = "<group>"; };
 		D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyPreferenceViewController.swift; sourceTree = "<group>"; };
 		D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TallyPreferenceViewController.xib; sourceTree = "<group>"; };
-		D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaybackToTally.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7792E0A259BB5CC005B8158 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		D7792E10259BC182005B8158 /* StatusMenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuState.swift; sourceTree = "<group>"; };
+		D7986C9D2598E20700CB0F6D /* Playback2Tally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playback2Tally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7986CA02598E20700CB0F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7986CA42598E20800CB0F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7986CA72598E20800CB0F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7986CA92598E20800CB0F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7986CAA2598E20800CB0F6D /* PlaybackToTally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaybackToTally.entitlements; sourceTree = "<group>"; };
-		D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybackToTallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybackToTallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7986CAA2598E20800CB0F6D /* Playback2Tally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playback2Tally.entitlements; sourceTree = "<group>"; };
+		D7986CAF2598E20800CB0F6D /* Playback2TallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Playback2TallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7986CBA2598E20800CB0F6D /* Playback2TallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Playback2TallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackToTallyUITests.swift; sourceTree = "<group>"; };
 		D7986CC02598E20800CB0F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7986D802598FA1000CB0F6D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -180,9 +184,9 @@
 		D7986C942598E20700CB0F6D = {
 			isa = PBXGroup;
 			children = (
-				D7986C9F2598E20700CB0F6D /* PlaybackToTally */,
-				D7986CB22598E20800CB0F6D /* PlaybackToTallyTests */,
-				D7986CBD2598E20800CB0F6D /* PlaybackToTallyUITests */,
+				D7986C9F2598E20700CB0F6D /* Playback2Tally */,
+				D7986CB22598E20800CB0F6D /* Playback2TallyTests */,
+				D7986CBD2598E20800CB0F6D /* Playback2TallyUITests */,
 				D7986C9E2598E20700CB0F6D /* Products */,
 				D7792DD02599DB6F005B8158 /* Frameworks */,
 			);
@@ -191,14 +195,14 @@
 		D7986C9E2598E20700CB0F6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */,
-				D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */,
-				D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */,
+				D7986C9D2598E20700CB0F6D /* Playback2Tally.app */,
+				D7986CAF2598E20800CB0F6D /* Playback2TallyTests.xctest */,
+				D7986CBA2598E20800CB0F6D /* Playback2TallyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7986C9F2598E20700CB0F6D /* PlaybackToTally */ = {
+		D7986C9F2598E20700CB0F6D /* Playback2Tally */ = {
 			isa = PBXGroup;
 			children = (
 				D7792DB52599AC66005B8158 /* Views */,
@@ -206,39 +210,41 @@
 				D7986CA42598E20800CB0F6D /* Assets.xcassets */,
 				D7986CA62598E20800CB0F6D /* Main.storyboard */,
 				D7986CA92598E20800CB0F6D /* Info.plist */,
-				D7986CAA2598E20800CB0F6D /* PlaybackToTally.entitlements */,
+				D7986CAA2598E20800CB0F6D /* Playback2Tally.entitlements */,
+				D7792E0A259BB5CC005B8158 /* Manager.swift */,
 				D7986D802598FA1000CB0F6D /* Preferences.swift */,
 				D7986D812598FA1000CB0F6D /* State.swift */,
+				D7792E10259BC182005B8158 /* StatusMenuState.swift */,
 				D7792CAD25994419005B8158 /* Extensions */,
 				D7792CC925994454005B8158 /* Playback */,
 				D7792CD12599445A005B8158 /* Tally */,
 			);
-			path = PlaybackToTally;
+			path = Playback2Tally;
 			sourceTree = "<group>";
 		};
-		D7986CB22598E20800CB0F6D /* PlaybackToTallyTests */ = {
+		D7986CB22598E20800CB0F6D /* Playback2TallyTests */ = {
 			isa = PBXGroup;
 			children = (
 				D7792CFC259944F9005B8158 /* Info.plist */,
 			);
-			path = PlaybackToTallyTests;
+			path = Playback2TallyTests;
 			sourceTree = "<group>";
 		};
-		D7986CBD2598E20800CB0F6D /* PlaybackToTallyUITests */ = {
+		D7986CBD2598E20800CB0F6D /* Playback2TallyUITests */ = {
 			isa = PBXGroup;
 			children = (
 				D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */,
 				D7986CC02598E20800CB0F6D /* Info.plist */,
 			);
-			path = PlaybackToTallyUITests;
+			path = Playback2TallyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D7986C9C2598E20700CB0F6D /* PlaybackToTally */ = {
+		D7986C9C2598E20700CB0F6D /* Playback2Tally */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTally" */;
+			buildConfigurationList = D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2Tally" */;
 			buildPhases = (
 				D7986C992598E20700CB0F6D /* Sources */,
 				D7986C9A2598E20700CB0F6D /* Frameworks */,
@@ -250,7 +256,7 @@
 			);
 			dependencies = (
 			);
-			name = PlaybackToTally;
+			name = Playback2Tally;
 			packageProductDependencies = (
 				D7986CD62598E23400CB0F6D /* OSCKit */,
 				D7792D7E25998F23005B8158 /* LaunchAtLogin */,
@@ -258,12 +264,12 @@
 				D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */,
 			);
 			productName = PlaybackToTally;
-			productReference = D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */;
+			productReference = D7986C9D2598E20700CB0F6D /* Playback2Tally.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D7986CAE2598E20800CB0F6D /* PlaybackToTallyTests */ = {
+		D7986CAE2598E20800CB0F6D /* Playback2TallyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyTests" */;
+			buildConfigurationList = D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2TallyTests" */;
 			buildPhases = (
 				D7986CAB2598E20800CB0F6D /* Sources */,
 				D7986CAC2598E20800CB0F6D /* Frameworks */,
@@ -274,14 +280,14 @@
 			dependencies = (
 				D7986CB12598E20800CB0F6D /* PBXTargetDependency */,
 			);
-			name = PlaybackToTallyTests;
+			name = Playback2TallyTests;
 			productName = PlaybackToTallyTests;
-			productReference = D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */;
+			productReference = D7986CAF2598E20800CB0F6D /* Playback2TallyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D7986CB92598E20800CB0F6D /* PlaybackToTallyUITests */ = {
+		D7986CB92598E20800CB0F6D /* Playback2TallyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyUITests" */;
+			buildConfigurationList = D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2TallyUITests" */;
 			buildPhases = (
 				D7986CB62598E20800CB0F6D /* Sources */,
 				D7986CB72598E20800CB0F6D /* Frameworks */,
@@ -292,9 +298,9 @@
 			dependencies = (
 				D7986CBC2598E20800CB0F6D /* PBXTargetDependency */,
 			);
-			name = PlaybackToTallyUITests;
+			name = Playback2TallyUITests;
 			productName = PlaybackToTallyUITests;
-			productReference = D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */;
+			productReference = D7986CBA2598E20800CB0F6D /* Playback2TallyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -319,7 +325,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "PlaybackToTally" */;
+			buildConfigurationList = D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "Playback2Tally" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -338,9 +344,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7986C9C2598E20700CB0F6D /* PlaybackToTally */,
-				D7986CAE2598E20800CB0F6D /* PlaybackToTallyTests */,
-				D7986CB92598E20800CB0F6D /* PlaybackToTallyUITests */,
+				D7986C9C2598E20700CB0F6D /* Playback2Tally */,
+				D7986CAE2598E20800CB0F6D /* Playback2TallyTests */,
+				D7986CB92598E20800CB0F6D /* Playback2TallyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7792DCB2599DA73005B8158 /* PlaybackPreferenceViewController.swift in Sources */,
+				D7792E11259BC182005B8158 /* StatusMenuState.swift in Sources */,
 				D7792D3125994649005B8158 /* TalleyConnection.swift in Sources */,
 				D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */,
 				D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */,
@@ -411,6 +418,7 @@
 				D7792CCD25994454005B8158 /* Mitti.swift in Sources */,
 				D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */,
 				D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */,
+				D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */,
 				D7792CCC25994454005B8158 /* Playback.swift in Sources */,
 				D7986D832598FA1000CB0F6D /* State.swift in Sources */,
 			);
@@ -439,12 +447,12 @@
 /* Begin PBXTargetDependency section */
 		D7986CB12598E20800CB0F6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D7986C9C2598E20700CB0F6D /* PlaybackToTally */;
+			target = D7986C9C2598E20700CB0F6D /* Playback2Tally */;
 			targetProxy = D7986CB02598E20800CB0F6D /* PBXContainerItemProxy */;
 		};
 		D7986CBC2598E20800CB0F6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D7986C9C2598E20700CB0F6D /* PlaybackToTally */;
+			target = D7986C9C2598E20700CB0F6D /* Playback2Tally */;
 			targetProxy = D7986CBB2598E20800CB0F6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -581,16 +589,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PlaybackToTally/PlaybackToTally.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Playback2Tally/Playback2Tally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTally/Info.plist;
+				INFOPLIST_FILE = Playback2Tally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTally;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2Tally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -601,16 +609,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PlaybackToTally/PlaybackToTally.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Playback2Tally/Playback2Tally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTally/Info.plist;
+				INFOPLIST_FILE = Playback2Tally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTally;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2Tally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -623,17 +631,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTallyTests/Info.plist;
+				INFOPLIST_FILE = Playback2TallyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2TallyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaybackToTally.app/Contents/MacOS/PlaybackToTally";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playback2Tally.app/Contents/MacOS/Playback2Tally";
 			};
 			name = Debug;
 		};
@@ -644,17 +652,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTallyTests/Info.plist;
+				INFOPLIST_FILE = Playback2TallyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2TallyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaybackToTally.app/Contents/MacOS/PlaybackToTally";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playback2Tally.app/Contents/MacOS/Playback2Tally";
 			};
 			name = Release;
 		};
@@ -664,16 +672,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTallyUITests/Info.plist;
+				INFOPLIST_FILE = Playback2TallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2TallyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = PlaybackToTally;
+				TEST_TARGET_NAME = Playback2Tally;
 			};
 			name = Debug;
 		};
@@ -683,23 +691,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = PlaybackToTallyUITests/Info.plist;
+				INFOPLIST_FILE = Playback2TallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.Playback2TallyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = PlaybackToTally;
+				TEST_TARGET_NAME = Playback2Tally;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "PlaybackToTally" */ = {
+		D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "Playback2Tally" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7986CC12598E20800CB0F6D /* Debug */,
@@ -708,7 +716,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTally" */ = {
+		D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2Tally" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7986CC42598E20800CB0F6D /* Debug */,
@@ -717,7 +725,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyTests" */ = {
+		D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2TallyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7986CC72598E20800CB0F6D /* Debug */,
@@ -726,7 +734,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyUITests" */ = {
+		D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "Playback2TallyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7986CCA2598E20800CB0F6D /* Debug */,

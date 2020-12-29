@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import PlaybackToTally
+@testable import Playback2Tally
 
 class UDMPacketTests: XCTestCase {
 

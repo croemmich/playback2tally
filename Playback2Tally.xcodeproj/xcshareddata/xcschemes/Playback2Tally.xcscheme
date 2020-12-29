@@ -15,9 +15,37 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D7986C9C2598E20700CB0F6D"
-               BuildableName = "PlaybackToTally.app"
-               BlueprintName = "PlaybackToTally"
-               ReferencedContainer = "container:PlaybackToTally.xcodeproj">
+               BuildableName = "Playback2Tally.app"
+               BlueprintName = "Playback2Tally"
+               ReferencedContainer = "container:Playback2Tally.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D7986CAE2598E20800CB0F6D"
+               BuildableName = "Playback2TallyTests.xctest"
+               BlueprintName = "Playback2TallyTests"
+               ReferencedContainer = "container:Playback2Tally.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D7986CB92598E20800CB0F6D"
+               BuildableName = "Playback2TallyUITests.xctest"
+               BlueprintName = "Playback2TallyUITests"
+               ReferencedContainer = "container:Playback2Tally.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D7986CAE2598E20800CB0F6D"
-               BuildableName = "PlaybackToTallyTests.xctest"
-               BlueprintName = "PlaybackToTallyTests"
-               ReferencedContainer = "container:PlaybackToTally.xcodeproj">
+               BuildableName = "Playback2TallyTests.xctest"
+               BlueprintName = "Playback2TallyTests"
+               ReferencedContainer = "container:Playback2Tally.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +71,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D7986CB92598E20800CB0F6D"
-               BuildableName = "PlaybackToTallyUITests.xctest"
-               BlueprintName = "PlaybackToTallyUITests"
-               ReferencedContainer = "container:PlaybackToTally.xcodeproj">
+               BuildableName = "Playback2TallyUITests.xctest"
+               BlueprintName = "Playback2TallyUITests"
+               ReferencedContainer = "container:Playback2Tally.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +93,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D7986C9C2598E20700CB0F6D"
-            BuildableName = "PlaybackToTally.app"
-            BlueprintName = "PlaybackToTally"
-            ReferencedContainer = "container:PlaybackToTally.xcodeproj">
+            BuildableName = "Playback2Tally.app"
+            BlueprintName = "Playback2Tally"
+            ReferencedContainer = "container:Playback2Tally.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -77,16 +105,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D7986C9C2598E20700CB0F6D"
-            BuildableName = "PlaybackToTally.app"
-            BlueprintName = "PlaybackToTally"
-            ReferencedContainer = "container:PlaybackToTally.xcodeproj">
+            BuildableName = "Playback2Tally.app"
+            BlueprintName = "Playback2Tally"
+            ReferencedContainer = "container:Playback2Tally.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
