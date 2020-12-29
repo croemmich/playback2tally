@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7792CAF25994419005B8158 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CAE25994419005B8158 /* Time.swift */; };
+		D7792CCC25994454005B8158 /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCA25994454005B8158 /* Playback.swift */; };
+		D7792CCD25994454005B8158 /* Mitti.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCB25994454005B8158 /* Mitti.swift */; };
+		D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */; };
+		D7792CE72599447B005B8158 /* UDMPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDD25994470005B8158 /* UDMPacketTests.swift */; };
+		D7792CEE25994481005B8158 /* TalleyConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */; };
+		D7792CF225994484005B8158 /* UDMPacketBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */; };
+		D7792D272599463F005B8158 /* UDMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD22599445A005B8158 /* UDMPacket.swift */; };
+		D7792D3125994649005B8158 /* TalleyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD32599445A005B8158 /* TalleyConnection.swift */; };
+		D7792D7F25998F23005B8158 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D7792D7E25998F23005B8158 /* LaunchAtLogin */; };
+		D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DB12599AC2B005B8158 /* PreferenceExtentions.swift */; };
+		D7792DC72599DA43005B8158 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DC62599DA43005B8158 /* GeneralPreferenceViewController.swift */; };
+		D7792DCB2599DA73005B8158 /* PlaybackPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DCA2599DA73005B8158 /* PlaybackPreferenceViewController.swift */; };
+		D7792DD22599DB6F005B8158 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = D7792DD12599DB6F005B8158 /* Preferences */; };
+		D7792DEE2599E741005B8158 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DED2599E741005B8158 /* GeneralPreferenceViewController.xib */; };
+		D7792DF22599E855005B8158 /* PlaybackPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */; };
+		D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */; };
+		D7792DFC259A678A005B8158 /* TallyPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */; };
+		D7792E01259A6B3A005B8158 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */; };
+		D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986CA02598E20700CB0F6D /* AppDelegate.swift */; };
+		D7986CA52598E20800CB0F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7986CA42598E20800CB0F6D /* Assets.xcassets */; };
+		D7986CA82598E20800CB0F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7986CA62598E20800CB0F6D /* Main.storyboard */; };
+		D7986CBF2598E20800CB0F6D /* PlaybackToTallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */; };
+		D7986CD72598E23400CB0F6D /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = D7986CD62598E23400CB0F6D /* OSCKit */; };
+		D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D802598FA1000CB0F6D /* Preferences.swift */; };
+		D7986D832598FA1000CB0F6D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D812598FA1000CB0F6D /* State.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7986CB02598E20800CB0F6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7986C952598E20700CB0F6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7986C9C2598E20700CB0F6D;
+			remoteInfo = PlaybackToTally;
+		};
+		D7986CBB2598E20800CB0F6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7986C952598E20700CB0F6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7986C9C2598E20700CB0F6D;
+			remoteInfo = PlaybackToTally;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7792D982599A392005B8158 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D7792CAE25994419005B8158 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		D7792CCA25994454005B8158 /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playback.swift; sourceTree = "<group>"; };
+		D7792CCB25994454005B8158 /* Mitti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mitti.swift; sourceTree = "<group>"; };
+		D7792CD22599445A005B8158 /* UDMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDMPacket.swift; sourceTree = "<group>"; };
+		D7792CD32599445A005B8158 /* TalleyConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalleyConnection.swift; sourceTree = "<group>"; };
+		D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDMPacketBuilder.swift; sourceTree = "<group>"; };
+		D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalleyConnectionTests.swift; sourceTree = "<group>"; };
+		D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMPacketBuilderTests.swift; sourceTree = "<group>"; };
+		D7792CDD25994470005B8158 /* UDMPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMPacketTests.swift; sourceTree = "<group>"; };
+		D7792CFC259944F9005B8158 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7792DB12599AC2B005B8158 /* PreferenceExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceExtentions.swift; sourceTree = "<group>"; };
+		D7792DC62599DA43005B8158 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
+		D7792DCA2599DA73005B8158 /* PlaybackPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPreferenceViewController.swift; sourceTree = "<group>"; };
+		D7792DED2599E741005B8158 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
+		D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaybackPreferenceViewController.xib; sourceTree = "<group>"; };
+		D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyPreferenceViewController.swift; sourceTree = "<group>"; };
+		D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TallyPreferenceViewController.xib; sourceTree = "<group>"; };
+		D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaybackToTally.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7986CA02598E20700CB0F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7986CA42598E20800CB0F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7986CA72598E20800CB0F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7986CA92598E20800CB0F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7986CAA2598E20800CB0F6D /* PlaybackToTally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaybackToTally.entitlements; sourceTree = "<group>"; };
+		D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybackToTallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybackToTallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackToTallyUITests.swift; sourceTree = "<group>"; };
+		D7986CC02598E20800CB0F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7986D802598FA1000CB0F6D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		D7986D812598FA1000CB0F6D /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7986C9A2598E20700CB0F6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7792D7F25998F23005B8158 /* LaunchAtLogin in Frameworks */,
+				D7792DD22599DB6F005B8158 /* Preferences in Frameworks */,
+				D7986CD72598E23400CB0F6D /* OSCKit in Frameworks */,
+				D7792E01259A6B3A005B8158 /* SwiftyUserDefaults in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CAC2598E20800CB0F6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CB72598E20800CB0F6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7792CAD25994419005B8158 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7792CAE25994419005B8158 /* Time.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D7792CC925994454005B8158 /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				D7792CCA25994454005B8158 /* Playback.swift */,
+				D7792CCB25994454005B8158 /* Mitti.swift */,
+			);
+			path = Playback;
+			sourceTree = "<group>";
+		};
+		D7792CD12599445A005B8158 /* Tally */ = {
+			isa = PBXGroup;
+			children = (
+				D7792CD22599445A005B8158 /* UDMPacket.swift */,
+				D7792CDD25994470005B8158 /* UDMPacketTests.swift */,
+				D7792CD32599445A005B8158 /* TalleyConnection.swift */,
+				D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */,
+				D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */,
+				D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */,
+			);
+			path = Tally;
+			sourceTree = "<group>";
+		};
+		D7792DB52599AC66005B8158 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7792DB12599AC2B005B8158 /* PreferenceExtentions.swift */,
+				D7792DC62599DA43005B8158 /* GeneralPreferenceViewController.swift */,
+				D7792DED2599E741005B8158 /* GeneralPreferenceViewController.xib */,
+				D7792DCA2599DA73005B8158 /* PlaybackPreferenceViewController.swift */,
+				D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */,
+				D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */,
+				D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D7792DD02599DB6F005B8158 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7986C942598E20700CB0F6D = {
+			isa = PBXGroup;
+			children = (
+				D7986C9F2598E20700CB0F6D /* PlaybackToTally */,
+				D7986CB22598E20800CB0F6D /* PlaybackToTallyTests */,
+				D7986CBD2598E20800CB0F6D /* PlaybackToTallyUITests */,
+				D7986C9E2598E20700CB0F6D /* Products */,
+				D7792DD02599DB6F005B8158 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D7986C9E2598E20700CB0F6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */,
+				D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */,
+				D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7986C9F2598E20700CB0F6D /* PlaybackToTally */ = {
+			isa = PBXGroup;
+			children = (
+				D7792DB52599AC66005B8158 /* Views */,
+				D7986CA02598E20700CB0F6D /* AppDelegate.swift */,
+				D7986CA42598E20800CB0F6D /* Assets.xcassets */,
+				D7986CA62598E20800CB0F6D /* Main.storyboard */,
+				D7986CA92598E20800CB0F6D /* Info.plist */,
+				D7986CAA2598E20800CB0F6D /* PlaybackToTally.entitlements */,
+				D7986D802598FA1000CB0F6D /* Preferences.swift */,
+				D7986D812598FA1000CB0F6D /* State.swift */,
+				D7792CAD25994419005B8158 /* Extensions */,
+				D7792CC925994454005B8158 /* Playback */,
+				D7792CD12599445A005B8158 /* Tally */,
+			);
+			path = PlaybackToTally;
+			sourceTree = "<group>";
+		};
+		D7986CB22598E20800CB0F6D /* PlaybackToTallyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7792CFC259944F9005B8158 /* Info.plist */,
+			);
+			path = PlaybackToTallyTests;
+			sourceTree = "<group>";
+		};
+		D7986CBD2598E20800CB0F6D /* PlaybackToTallyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */,
+				D7986CC02598E20800CB0F6D /* Info.plist */,
+			);
+			path = PlaybackToTallyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7986C9C2598E20700CB0F6D /* PlaybackToTally */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTally" */;
+			buildPhases = (
+				D7986C992598E20700CB0F6D /* Sources */,
+				D7986C9A2598E20700CB0F6D /* Frameworks */,
+				D7986C9B2598E20700CB0F6D /* Resources */,
+				D7792D8325998F37005B8158 /* LaunchAtLogin Helper */,
+				D7792D982599A392005B8158 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaybackToTally;
+			packageProductDependencies = (
+				D7986CD62598E23400CB0F6D /* OSCKit */,
+				D7792D7E25998F23005B8158 /* LaunchAtLogin */,
+				D7792DD12599DB6F005B8158 /* Preferences */,
+				D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */,
+			);
+			productName = PlaybackToTally;
+			productReference = D7986C9D2598E20700CB0F6D /* PlaybackToTally.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7986CAE2598E20800CB0F6D /* PlaybackToTallyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyTests" */;
+			buildPhases = (
+				D7986CAB2598E20800CB0F6D /* Sources */,
+				D7986CAC2598E20800CB0F6D /* Frameworks */,
+				D7986CAD2598E20800CB0F6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7986CB12598E20800CB0F6D /* PBXTargetDependency */,
+			);
+			name = PlaybackToTallyTests;
+			productName = PlaybackToTallyTests;
+			productReference = D7986CAF2598E20800CB0F6D /* PlaybackToTallyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7986CB92598E20800CB0F6D /* PlaybackToTallyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyUITests" */;
+			buildPhases = (
+				D7986CB62598E20800CB0F6D /* Sources */,
+				D7986CB72598E20800CB0F6D /* Frameworks */,
+				D7986CB82598E20800CB0F6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7986CBC2598E20800CB0F6D /* PBXTargetDependency */,
+			);
+			name = PlaybackToTallyUITests;
+			productName = PlaybackToTallyUITests;
+			productReference = D7986CBA2598E20800CB0F6D /* PlaybackToTallyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7986C952598E20700CB0F6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					D7986C9C2598E20700CB0F6D = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					D7986CAE2598E20800CB0F6D = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = D7986C9C2598E20700CB0F6D;
+					};
+					D7986CB92598E20800CB0F6D = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = D7986C9C2598E20700CB0F6D;
+					};
+				};
+			};
+			buildConfigurationList = D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "PlaybackToTally" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7986C942598E20700CB0F6D;
+			packageReferences = (
+				D7986CD52598E23400CB0F6D /* XCRemoteSwiftPackageReference "OSCKit" */,
+				D7792D7D25998F23005B8158 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				D7792DBB2599BCDE005B8158 /* XCRemoteSwiftPackageReference "Preferences" */,
+				D7792DFF259A6B3A005B8158 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+			);
+			productRefGroup = D7986C9E2598E20700CB0F6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7986C9C2598E20700CB0F6D /* PlaybackToTally */,
+				D7986CAE2598E20800CB0F6D /* PlaybackToTallyTests */,
+				D7986CB92598E20800CB0F6D /* PlaybackToTallyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7986C9B2598E20700CB0F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7986CA52598E20800CB0F6D /* Assets.xcassets in Resources */,
+				D7986CA82598E20800CB0F6D /* Main.storyboard in Resources */,
+				D7792DFC259A678A005B8158 /* TallyPreferenceViewController.xib in Resources */,
+				D7792DF22599E855005B8158 /* PlaybackPreferenceViewController.xib in Resources */,
+				D7792DEE2599E741005B8158 /* GeneralPreferenceViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CAD2598E20800CB0F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CB82598E20800CB0F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D7792D8325998F37005B8158 /* LaunchAtLogin Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "LaunchAtLogin Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7986C992598E20700CB0F6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7792DCB2599DA73005B8158 /* PlaybackPreferenceViewController.swift in Sources */,
+				D7792D3125994649005B8158 /* TalleyConnection.swift in Sources */,
+				D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */,
+				D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */,
+				D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */,
+				D7792D272599463F005B8158 /* UDMPacket.swift in Sources */,
+				D7792DC72599DA43005B8158 /* GeneralPreferenceViewController.swift in Sources */,
+				D7792CAF25994419005B8158 /* Time.swift in Sources */,
+				D7792CCD25994454005B8158 /* Mitti.swift in Sources */,
+				D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */,
+				D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */,
+				D7792CCC25994454005B8158 /* Playback.swift in Sources */,
+				D7986D832598FA1000CB0F6D /* State.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CAB2598E20800CB0F6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7792CE72599447B005B8158 /* UDMPacketTests.swift in Sources */,
+				D7792CF225994484005B8158 /* UDMPacketBuilderTests.swift in Sources */,
+				D7792CEE25994481005B8158 /* TalleyConnectionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7986CB62598E20800CB0F6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7986CBF2598E20800CB0F6D /* PlaybackToTallyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7986CB12598E20800CB0F6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7986C9C2598E20700CB0F6D /* PlaybackToTally */;
+			targetProxy = D7986CB02598E20800CB0F6D /* PBXContainerItemProxy */;
+		};
+		D7986CBC2598E20800CB0F6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7986C9C2598E20700CB0F6D /* PlaybackToTally */;
+			targetProxy = D7986CBB2598E20800CB0F6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7986CA62598E20800CB0F6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7986CA72598E20800CB0F6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7986CC12598E20800CB0F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D7986CC22598E20800CB0F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D7986CC42598E20800CB0F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlaybackToTally/PlaybackToTally.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTally/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTally;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D7986CC52598E20800CB0F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlaybackToTally/PlaybackToTally.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTally/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTally;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D7986CC72598E20800CB0F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTallyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaybackToTally.app/Contents/MacOS/PlaybackToTally";
+			};
+			name = Debug;
+		};
+		D7986CC82598E20800CB0F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTallyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaybackToTally.app/Contents/MacOS/PlaybackToTally";
+			};
+			name = Release;
+		};
+		D7986CCA2598E20800CB0F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTallyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PlaybackToTally;
+			};
+			name = Debug;
+		};
+		D7986CCB2598E20800CB0F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlaybackToTallyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roemmichs.PlaybackToTallyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = PlaybackToTally;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7986C982598E20700CB0F6D /* Build configuration list for PBXProject "PlaybackToTally" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7986CC12598E20800CB0F6D /* Debug */,
+				D7986CC22598E20800CB0F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7986CC32598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTally" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7986CC42598E20800CB0F6D /* Debug */,
+				D7986CC52598E20800CB0F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7986CC62598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7986CC72598E20800CB0F6D /* Debug */,
+				D7986CC82598E20800CB0F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7986CC92598E20800CB0F6D /* Build configuration list for PBXNativeTarget "PlaybackToTallyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7986CCA2598E20800CB0F6D /* Debug */,
+				D7986CCB2598E20800CB0F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7792D7D25998F23005B8158 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		D7792DBB2599BCDE005B8158 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+		D7792DFF259A6B3A005B8158 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		D7986CD52598E23400CB0F6D /* XCRemoteSwiftPackageReference "OSCKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SammyTheHand/OSCKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7792D7E25998F23005B8158 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7792D7D25998F23005B8158 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		D7792DD12599DB6F005B8158 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7792DBB2599BCDE005B8158 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		D7792E00259A6B3A005B8158 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7792DFF259A6B3A005B8158 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		D7986CD62598E23400CB0F6D /* OSCKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7986CD52598E23400CB0F6D /* XCRemoteSwiftPackageReference "OSCKit" */;
+			productName = OSCKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D7986C952598E20700CB0F6D /* Project object */;
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="PlaybackToTally" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="PlaybackToTally" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="Status" enabled="NO" id="CkJ-sw-RkB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Cue" enabled="NO" id="h8g-gj-ddm">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Time Total" enabled="NO" id="Qn8-eZ-UlU">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Time Left" enabled="NO" id="YCC-OD-5AB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Time Elapsed" enabled="NO" id="S8T-wY-Mb6" userLabel="Time Elapsed">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Prev Cue" enabled="NO" id="M8M-FH-A2q" userLabel="Previous Cue">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Next Cue" enabled="NO" id="k4v-Qw-BK7">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="iId-2I-wrD"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="About" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Quit" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="puo-VU-02R"/>
+                    </connections>
+                </application>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PlaybackToTally" customModuleProvider="target">
+                    <connections>
+                        <outlet property="cueMenuItem" destination="h8g-gj-ddm" id="8DW-QH-UOM"/>
+                        <outlet property="menu" destination="uQy-DD-JDr" id="czB-HU-NOm"/>
+                        <outlet property="nextCueMenuItem" destination="k4v-Qw-BK7" id="J1L-UK-MXF"/>
+                        <outlet property="previousCueMenuItem" destination="M8M-FH-A2q" id="Ucr-Ox-Iax"/>
+                        <outlet property="statusMenuItem" destination="CkJ-sw-RkB" id="aKz-f8-EhO"/>
+                        <outlet property="timeElapsedMenuItem" destination="S8T-wY-Mb6" id="u9S-td-1J2"/>
+                        <outlet property="timeLeftMenuItem" destination="YCC-OD-5AB" id="ENa-XQ-eDS"/>
+                        <outlet property="timeTotalMenuItem" destination="Qn8-eZ-UlU" id="hL6-Zk-ekm"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-1757" y="-90"/>
+        </scene>
+    </scenes>
+</document>

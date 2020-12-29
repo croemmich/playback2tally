@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PlaybackPreferenceViewController" customModule="PlaybackToTally" customModuleProvider="target">
+            <connections>
+                <outlet property="mittiFeedbackPortField" destination="avg-Ve-iWB" id="57f-u8-9Zc"/>
+                <outlet property="mittiHostField" destination="AaE-PR-ibN" id="PXy-0z-Uax"/>
+                <outlet property="mittiPortField" destination="RVO-K3-FaT" id="wAg-qS-0JW"/>
+                <outlet property="mittiPrefrences" destination="oRe-No-pcH" id="77d-b2-41X"/>
+                <outlet property="playbackType" destination="dW4-2T-0Jk" id="SL5-Dp-1R0"/>
+                <outlet property="view" destination="c22-O7-iKe" id="wci-qW-doy"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5IP-cY-jJv" userLabel="Background">
+                    <rect key="frame" x="0.0" y="273" width="480" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="0KM-G1-fmo">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="underPageBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dW4-2T-0Jk" userLabel="Playback Type">
+                    <rect key="frame" x="223" y="283" width="77" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="CNQ-OM-O8j" id="XWt-MS-D52">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="38e-Jb-Lht">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="CNQ-OM-O8j"/>
+                                <menuItem title="Item 2" id="B6B-sM-XDp"/>
+                                <menuItem title="Item 3" id="ndb-iS-Tbu"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="onPlaybackTypeChanged:" target="-2" id="gqG-1I-NkI"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJQ-0E-bec">
+                    <rect key="frame" x="181" y="289" width="41" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Type:" id="lyi-SI-SGt">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRe-No-pcH" userLabel="Mitti Preferences">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="265"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11W-IS-RiM">
+                            <rect key="frame" x="183" y="107" width="114" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Configuring Mitti" id="nfF-Oi-FHZ">
+                                <font key="font" metaFont="systemBold"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-aF-DU4">
+                            <rect key="frame" x="18" y="20" width="444" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" selectable="YES" id="sEb-5N-tcP">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <string key="title">Open "Project Preferences" and select "OSC/UDP Controls". Click "Enable" Feedback To: "Custom" IP: The IP of the computer running Pb2T (or 127.0.0.1 if on same host) Port: The value from "Feedback Port" above</string>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RGU-0Y-uYw">
+                            <rect key="frame" x="116" y="170" width="249" height="75"/>
+                            <rows>
+                                <gridRow id="SMn-1W-6hq"/>
+                                <gridRow id="dY4-3A-rFR"/>
+                                <gridRow id="pgk-Kq-tmg"/>
+                            </rows>
+                            <columns>
+                                <gridColumn id="028-9x-guM"/>
+                                <gridColumn width="146" id="EqZ-CW-kAh"/>
+                            </columns>
+                            <gridCells>
+                                <gridCell row="SMn-1W-6hq" column="028-9x-guM" id="i0r-nR-nkj">
+                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OAv-O1-NYo">
+                                        <rect key="frame" x="-2" y="54" width="97" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Feedback Port:" id="vH1-d1-ad5">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </gridCell>
+                                <gridCell row="SMn-1W-6hq" column="EqZ-CW-kAh" id="E2Q-Ii-Lnm">
+                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="avg-Ve-iWB">
+                                        <rect key="frame" x="103" y="54" width="70" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="WYz-qF-QpZ"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="CPb-Pi-d8V">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="-2" id="dfG-4W-Gbb"/>
+                                        </connections>
+                                    </textField>
+                                </gridCell>
+                                <gridCell row="dY4-3A-rFR" column="028-9x-guM" id="ia8-gh-ZCq">
+                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="riL-xV-fc6">
+                                        <rect key="frame" x="-2" y="27" width="67" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Mitti Host:" id="3Gp-9c-RC6">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </gridCell>
+                                <gridCell row="dY4-3A-rFR" column="EqZ-CW-kAh" id="7Nu-4R-K3U">
+                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AaE-PR-ibN">
+                                        <rect key="frame" x="103" y="27" width="140" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="7fM-Wy-aId"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="IL0-Ys-zgY">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="-2" id="ftG-gK-OT3"/>
+                                        </connections>
+                                    </textField>
+                                </gridCell>
+                                <gridCell row="pgk-Kq-tmg" column="028-9x-guM" id="lRm-tA-ROP">
+                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nU6-w7-ZjR">
+                                        <rect key="frame" x="-2" y="0.0" width="64" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Mitti Port:" id="tJa-Ml-AMa">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </gridCell>
+                                <gridCell row="pgk-Kq-tmg" column="EqZ-CW-kAh" id="95v-s4-EJv">
+                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVO-K3-FaT">
+                                        <rect key="frame" x="103" y="0.0" width="70" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="4U1-qm-Dw4"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="7fc-Mf-oEt">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="-2" id="Bi9-8i-YkX"/>
+                                        </connections>
+                                    </textField>
+                                </gridCell>
+                            </gridCells>
+                        </gridView>
+                    </subviews>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="width" constant="480" id="w05-59-GR5"/>
+                <constraint firstAttribute="height" constant="320" id="zOL-sk-aRn"/>
+            </constraints>
+            <point key="canvasLocation" x="-293" y="132"/>
+        </customView>
+    </objects>
+</document>

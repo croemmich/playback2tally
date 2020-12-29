@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TallyPreferenceViewController" customModule="PlaybackToTally" customModuleProvider="target">
+            <connections>
+                <outlet property="udmAddressCueName" destination="9G7-20-kVX" id="XAK-0m-SGf"/>
+                <outlet property="udmAddressNextCueName" destination="3W1-m8-yQV" id="s46-lT-Yrz"/>
+                <outlet property="udmAddressPreviousCueName" destination="zXW-QG-bTj" id="fxm-4d-pTh"/>
+                <outlet property="udmAddressTimeElapsed" destination="1YX-gn-J19" id="YJA-9a-htp"/>
+                <outlet property="udmAddressTimeLeft" destination="H7h-FK-ovc" id="8Xz-7F-MgP"/>
+                <outlet property="udmAddressTotalTime" destination="5jd-Ka-exe" id="V2m-dQ-Gm1"/>
+                <outlet property="udmHostField" destination="xxL-kh-GpV" id="S7k-ZE-id1"/>
+                <outlet property="udmPortField" destination="BNf-47-YBQ" id="val-YS-rXC"/>
+                <outlet property="view" destination="c22-O7-iKe" id="vxH-Vd-bpP"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <subviews>
+                <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a2u-ON-y0h">
+                    <rect key="frame" x="147" y="20" width="186" height="156"/>
+                    <rows>
+                        <gridRow id="cRi-wD-3TY"/>
+                        <gridRow id="XeP-Wm-Q5h"/>
+                        <gridRow id="aJ7-xS-id4"/>
+                        <gridRow id="kd4-WO-CJR"/>
+                        <gridRow id="VIB-xc-scb"/>
+                        <gridRow id="NZw-pG-VPd"/>
+                    </rows>
+                    <columns>
+                        <gridColumn xPlacement="trailing" id="Hjy-lX-y9u"/>
+                        <gridColumn id="4u4-Ej-u1K"/>
+                    </columns>
+                    <gridCells>
+                        <gridCell row="cRi-wD-3TY" column="Hjy-lX-y9u" yPlacement="center" id="Q3H-Wq-p0h">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-DY-lgU">
+                                <rect key="frame" x="54" y="138" width="71" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Cue Name:" id="lMr-Dj-Lef">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="cRi-wD-3TY" column="4u4-Ej-u1K" id="vw8-j1-eWV">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9G7-20-kVX" userLabel="Address Cue Name">
+                                <rect key="frame" x="131" y="132" width="58" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Off" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="dJR-kh-aQR" id="930-ES-Lkb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="gvM-iO-ugE">
+                                        <items>
+                                            <menuItem title="Off" state="on" id="dJR-kh-aQR" userLabel="Off">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="Z5i-Aa-tg6"/>
+                                    <outlet property="nextKeyView" destination="5jd-Ka-exe" id="iog-gs-qJX"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="XeP-Wm-Q5h" column="Hjy-lX-y9u" id="ljR-I9-zrk">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QOZ-LA-NCw">
+                                <rect key="frame" x="54" y="108" width="71" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Total Time:" id="Ae9-gn-BxZ">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="XeP-Wm-Q5h" column="4u4-Ej-u1K" id="kbz-jJ-0ql">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5jd-Ka-exe" userLabel="Address Total Time">
+                                <rect key="frame" x="131" y="105" width="38" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="KVU-Sn-DJk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="AqC-Lz-i3A"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="4Z5-iS-0dy"/>
+                                    <outlet property="nextKeyView" destination="H7h-FK-ovc" id="Y9t-bO-7uT"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="aJ7-xS-id4" column="Hjy-lX-y9u" id="Pjq-tF-gKA">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P29-Ox-bvb">
+                                <rect key="frame" x="60" y="81" width="65" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Time Left:" id="Tk6-Cc-FMn">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="aJ7-xS-id4" column="4u4-Ej-u1K" id="hQ5-o9-M4U">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-FK-ovc" userLabel="Address Time Left">
+                                <rect key="frame" x="131" y="78" width="38" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="H0C-hR-8kj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="kUR-1s-OdF"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="MUu-Re-g7z"/>
+                                    <outlet property="nextKeyView" destination="1YX-gn-J19" id="nPl-9I-E9o"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="kd4-WO-CJR" column="Hjy-lX-y9u" id="4IR-bf-gQq">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-8Q-hIl">
+                                <rect key="frame" x="35" y="54" width="90" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Time Elapsed:" id="QaK-4u-Xwm">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="kd4-WO-CJR" column="4u4-Ej-u1K" id="Czl-zf-PhO">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1YX-gn-J19" userLabel="Address Time Elapsed">
+                                <rect key="frame" x="131" y="51" width="38" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="PuT-7o-HhQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="dzl-gq-xoy"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="s10-iI-J3G"/>
+                                    <outlet property="nextKeyView" destination="zXW-QG-bTj" id="OKQ-ea-Jaj"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="VIB-xc-scb" column="Hjy-lX-y9u" id="TPA-Mp-L0T">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-Pr-pq8">
+                                <rect key="frame" x="-2" y="27" width="127" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Previous Cue Name:" id="rkd-bG-2o7">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="VIB-xc-scb" column="4u4-Ej-u1K" id="B72-Rl-KaS">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zXW-QG-bTj">
+                                <rect key="frame" x="131" y="24" width="38" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="Y5x-nu-VSo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="tZt-iR-70I"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="cTO-ys-f8a"/>
+                                    <outlet property="nextKeyView" destination="3W1-m8-yQV" id="LES-kA-Z3C"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="NZw-pG-VPd" column="Hjy-lX-y9u" id="CHJ-Xt-blq">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NPn-DS-P8t">
+                                <rect key="frame" x="22" y="0.0" width="103" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Next Cue Name:" id="9VW-ly-UF5">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="NZw-pG-VPd" column="4u4-Ej-u1K" id="QxG-Z0-Wid">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-m8-yQV">
+                                <rect key="frame" x="131" y="-3" width="38" height="25"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="uei-RT-3M6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Exs-nu-eso"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="s4V-wB-kdd"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                    </gridCells>
+                </gridView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULp-ue-hTR">
+                    <rect key="frame" x="18" y="184" width="444" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" selectable="YES" alignment="center" title="Tally Address Mapping" id="uyx-ns-l7c">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYs-py-yNe">
+                    <rect key="frame" x="149" y="216" width="183" height="84"/>
+                    <rows>
+                        <gridRow id="EOV-Ib-1bG"/>
+                        <gridRow id="HrO-l8-uoT"/>
+                        <gridRow id="UQQ-RS-6V1"/>
+                    </rows>
+                    <columns>
+                        <gridColumn xPlacement="trailing" id="lzG-Ga-Y2Z"/>
+                        <gridColumn id="7dv-95-pF9"/>
+                    </columns>
+                    <gridCells>
+                        <gridCell row="EOV-Ib-1bG" column="lzG-Ga-Y2Z" id="0sE-oq-mBD">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-KI-rOr">
+                                <rect key="frame" x="-2" y="63" width="37" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Host:" id="Ydg-o8-B9f">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="EOV-Ib-1bG" column="7dv-95-pF9" id="PkF-NB-VTc">
+                            <textField key="contentView" toolTip="The hostname or IP address to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-kh-GpV">
+                                <rect key="frame" x="43" y="63" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="qe4-qc-9Js"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="E9m-qz-XTc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Host"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="fdl-Wp-4ik"/>
+                                    <outlet property="nextKeyView" destination="BNf-47-YBQ" id="WG8-gk-rvR"/>
+                                </connections>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="HrO-l8-uoT" column="lzG-Ga-Y2Z" id="uMV-Kt-PhF">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-oR-XAR">
+                                <rect key="frame" x="1" y="36" width="34" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Port:" id="R3E-Xx-BK2">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="HrO-l8-uoT" column="7dv-95-pF9" id="Jz5-xT-Lk3">
+                            <textField key="contentView" toolTip="The port number to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNf-47-YBQ">
+                                <rect key="frame" x="43" y="36" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="GF2-E3-fpM"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="AmE-lO-dTb">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Port"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="V6Y-TE-2e0"/>
+                                    <outlet property="nextKeyView" destination="9G7-20-kVX" id="Lks-CX-jAf"/>
+                                </connections>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="UQQ-RS-6V1" column="lzG-Ga-Y2Z" id="Kdt-ZB-AEd"/>
+                        <gridCell row="UQQ-RS-6V1" column="7dv-95-pF9" id="8nv-k9-tNR"/>
+                    </gridCells>
+                </gridView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="width" constant="480" id="J7H-mj-tDU"/>
+                <constraint firstAttribute="height" constant="320" id="i7N-Gh-das"/>
+            </constraints>
+            <point key="canvasLocation" x="-135" y="154"/>
+        </customView>
+    </objects>
+</document>

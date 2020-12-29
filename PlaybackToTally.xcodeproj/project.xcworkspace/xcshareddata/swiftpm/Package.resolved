@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CocoaAsyncSocket",
+        "repositoryURL": "https://github.com/robbiehanson/CocoaAsyncSocket",
+        "state": {
+          "branch": null,
+          "revision": "dbdc00669c1ced63b27c3c5f052ee4d28f10150c",
+          "version": "7.6.5"
+        }
+      },
+      {
+        "package": "LaunchAtLogin",
+        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
+        "state": {
+          "branch": null,
+          "revision": "0f39982b9d6993eef253b81219d3c39ba1e680f3",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "OSCKit",
+        "repositoryURL": "https://github.com/SammyTheHand/OSCKit",
+        "state": {
+          "branch": null,
+          "revision": "028113cccc727a7b247c85b37eca5c74f0265b6a",
+          "version": "2.1.0"
+        }
+      },
+      {
+        "package": "Preferences",
+        "repositoryURL": "https://github.com/sindresorhus/Preferences",
+        "state": {
+          "branch": null,
+          "revision": "4802a493acef50c814e4eb63e9a44e0941ec8883",
+          "version": "2.2.0"
+        }
+      },
+      {
+        "package": "NetUtils",
+        "repositoryURL": "https://github.com/svdo/swift-netutils",
+        "state": {
+          "branch": null,
+          "revision": "776909ce0b37bd9ea1fa0f2156e4e5ad07a592b8",
+          "version": "4.2.0"
+        }
+      },
+      {
+        "package": "SwiftyUserDefaults",
+        "repositoryURL": "https://github.com/sunshinejr/SwiftyUserDefaults",
+        "state": {
+          "branch": null,
+          "revision": "28c8805314e67683f727c3376e69cbd4b8b590bb",
+          "version": "5.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
