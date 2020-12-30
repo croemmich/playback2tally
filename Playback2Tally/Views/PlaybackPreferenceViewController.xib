@@ -115,6 +115,7 @@
                                         </textFieldCell>
                                         <connections>
                                             <outlet property="delegate" destination="-2" id="dfG-4W-Gbb"/>
+                                            <outlet property="nextKeyView" destination="AaE-PR-ibN" id="MQM-xr-Vyc"/>
                                         </connections>
                                     </textField>
                                 </gridCell>
@@ -141,6 +142,7 @@
                                         </textFieldCell>
                                         <connections>
                                             <outlet property="delegate" destination="-2" id="ftG-gK-OT3"/>
+                                            <outlet property="nextKeyView" destination="RVO-K3-FaT" id="0be-xN-mlF"/>
                                         </connections>
                                     </textField>
                                 </gridCell>
