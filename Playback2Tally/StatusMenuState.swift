@@ -11,6 +11,7 @@ class StatusMenuState: NSObject, NSMenuDelegate {
     weak var timeElapsedMenuItem: NSMenuItem!
     weak var previousCueMenuItem: NSMenuItem!
     weak var nextCueMenuItem: NSMenuItem!
+    weak var selectedCueMenuItem: NSMenuItem!
 
     var statusItem: NSStatusItem!
     var renderMenuUpdates = false
@@ -37,6 +38,7 @@ class StatusMenuState: NSObject, NSMenuDelegate {
         timeElapsedMenuItem = menu.item(withTag: 5)
         previousCueMenuItem = menu.item(withTag: 6)
         nextCueMenuItem = menu.item(withTag: 7)
+        selectedCueMenuItem = menu.item(withTag: 8)
     }
     
     public func unbind() {
@@ -67,14 +69,17 @@ class StatusMenuState: NSObject, NSMenuDelegate {
             previousCueMenuItem?.title = "Prev Cue: " + (s.previousCueName != "" ? s.previousCueName : "N/A")
             nextCueMenuItem?.isHidden = false
             nextCueMenuItem?.title = "Next Cue: " + (s.nextCueName != "" ? s.nextCueName : "N/A")
+            selectedCueMenuItem?.isHidden = false
+            selectedCueMenuItem?.title = "Selected Cue: " + (s.selectedCueName != "" ? s.selectedCueName : "N/A")
         } else {
-            statusMenuItem?.title = "Status: Not Connected"
+            statusMenuItem?.title = "Waiting for playback status..."
             cueMenuItem?.isHidden = true
             timeTotalMenuItem?.isHidden = true
             timeLeftMenuItem?.isHidden = true
             timeElapsedMenuItem?.isHidden = true
             previousCueMenuItem?.isHidden = true
             nextCueMenuItem?.isHidden = true
+            selectedCueMenuItem?.isHidden = true
         }
     }
     

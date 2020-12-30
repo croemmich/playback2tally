@@ -64,14 +64,31 @@ class Manager {
     
     @objc func onDidUpdateState(_ notification: Notification) {
         let state = notification.userInfo!["state"] as! State
-        
         print("Observed state: playing: \(state.playing) cueName: \(state.cueName) timeTotal: \(state.timeTotal) timeLeft: \(state.timeLeft) timeElapsed: \(state.timeElapsed) previousCueName: \(state.previousCueName) nextCueName: \(state.nextCueName)")
 
-        let builder = UDMPacketBuilder()
-        if (state.playing) {
-            builder.display(text: String(Int(state.timeLeft))).tally1().brightnessFull()
+        sendTallyUpdatesForState(state: state)
+    }
+    
+    func sendTallyUpdatesForState(state: State) {
+        sendTallyUpdate(Defaults[.udmAddressCueName], state.playing, state.cueName)
+        sendTallyUpdate(Defaults[.udmAddressTimeTotal], state.playing, state.timeTotal.stringFromTimeInterval())
+        sendTallyUpdate(Defaults[.udmAddressTimeLeft], state.playing, state.timeLeft.stringFromTimeInterval())
+        sendTallyUpdate(Defaults[.udmAddressTimeElapsed], state.playing, state.timeElapsed.stringFromTimeInterval())
+        sendTallyUpdate(Defaults[.udmAddressPreviousCueName], state.playing, state.previousCueName)
+        sendTallyUpdate(Defaults[.udmAddressNextCueName], state.playing, state.nextCueName)
+        sendTallyUpdate(Defaults[.udmAddressSelectedCueName], state.playing, state.selectedCueName)
+    }
+    
+    func sendTallyUpdate(_ address: Int, _ isPlaying: Bool, _ display: String) {
+        if (address >= 0) {
+            let builder = UDMPacketBuilder()
+            builder.address(index: UInt8(address))
+            if (isPlaying) {
+                builder.tally1().brightnessFull()
+            }
+            builder.display(text: display)
+            tally?.send(packet: builder.build())
         }
-        tally?.send(packet: builder.build())
     }
     
 }

@@ -21,6 +21,7 @@ extension Defaults.Keys {
     static let udmAddressTimeElapsed = Key<Int>("udmAddressTimeElapsed", default: 3)
     static let udmAddressPreviousCueName = Key<Int>("udmAddressPreviousCueName", default: 4)
     static let udmAddressNextCueName = Key<Int>("udmAddressNextCueName", default: 5)
+    static let udmAddressSelectedCueName = Key<Int>("udmAddressSelectedCueName", default: 6)
 
     static let playbackVariant = Key<PlaybackVariant>("playbackVariant", default: .mitti)
 

@@ -73,6 +73,12 @@ class Mitti: Playback, OSCPacketDestination {
                 state.nextCueName = name
                 state.notify()
             }
+        case "/mitti/selectedCueName":
+            let name = sanitizeCueName(name: (message.arguments.first as! String))
+            if (state.selectedCueName != name) {
+                state.selectedCueName = name
+                state.notify()
+            }
         default:
             return
         }

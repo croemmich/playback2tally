@@ -55,6 +55,9 @@
                                         <menuItem title="Next Cue" tag="7" enabled="NO" id="k4v-Qw-BK7">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
+                                        <menuItem title="Selected Cue" tag="8" enabled="NO" id="c10-wt-Vfw" userLabel="Selected Cue">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>

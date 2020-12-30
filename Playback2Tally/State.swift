@@ -16,6 +16,8 @@ class State: NSObject, NSCopying {
     
     public var nextCueName: String = ""
     
+    public var selectedCueName: String = ""
+    
     func notify() {
         NotificationCenter.default.post(name: .didUpdateState, object: nil, userInfo: ["state": self.copy()])
     }
@@ -29,6 +31,7 @@ class State: NSObject, NSCopying {
         s.timeElapsed = timeElapsed
         s.previousCueName = previousCueName
         s.nextCueName = nextCueName
+        s.selectedCueName = selectedCueName
         return s
     }
     

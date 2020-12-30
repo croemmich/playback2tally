@@ -16,6 +16,7 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
     @IBOutlet weak var udmAddressTimeElapsed: NSPopUpButton!
     @IBOutlet weak var udmAddressPreviousCueName: NSPopUpButton!
     @IBOutlet weak var udmAddressNextCueName: NSPopUpButton!
+    @IBOutlet weak var udmAddressSelectedCueName: NSPopUpButton!
     
     var addressPopUps : Array<NSPopUpButton>? = nil
     
@@ -27,7 +28,7 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
         udmPortField.integerValue = Defaults[.udmPort]
         udmPortField.formatter = portNumberValidator()
   
-        addressPopUps = [udmAddressCueName, udmAddressTotalTime, udmAddressTimeLeft, udmAddressTimeElapsed, udmAddressPreviousCueName, udmAddressNextCueName]
+        addressPopUps = [udmAddressCueName, udmAddressTotalTime, udmAddressTimeLeft, udmAddressTimeElapsed, udmAddressPreviousCueName, udmAddressNextCueName, udmAddressSelectedCueName]
         for popup in addressPopUps! {
             buildUdmAddressMenu(popup.menu!)
             popup.autoenablesItems = false
@@ -38,6 +39,7 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
         udmAddressTimeElapsed.selectItem(withTag: Defaults[.udmAddressTimeElapsed])
         udmAddressPreviousCueName.selectItem(withTag: Defaults[.udmAddressPreviousCueName])
         udmAddressNextCueName.selectItem(withTag: Defaults[.udmAddressNextCueName])
+        udmAddressSelectedCueName.selectItem(withTag: Defaults[.udmAddressSelectedCueName])
         
         calculateEnabledAddressEntries()
     }
@@ -86,6 +88,8 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
                 Defaults[.udmAddressPreviousCueName] = sender.selectedTag()
             case udmAddressNextCueName:
                 Defaults[.udmAddressNextCueName] = sender.selectedTag()
+            case udmAddressSelectedCueName:
+                Defaults[.udmAddressSelectedCueName] = sender.selectedTag()
             default:
                 break
             }
