@@ -22,6 +22,9 @@ extension Defaults.Keys {
     static let udmAddressPreviousCueName = Key<Int>("udmAddressPreviousCueName", default: 4)
     static let udmAddressNextCueName = Key<Int>("udmAddressNextCueName", default: 5)
     static let udmAddressSelectedCueName = Key<Int>("udmAddressSelectedCueName", default: 6)
+    
+    static let udmServerPort = Key<Int>("udmServerPort", default: 5727)
+    static let udmServerProto = Key<String>("udmServerProto", default: "tcp")
 
     static let playbackVariant = Key<PlaybackVariant>("playbackVariant", default: .mitti)
 

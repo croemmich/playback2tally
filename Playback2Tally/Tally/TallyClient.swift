@@ -35,15 +35,7 @@ class TallyClient {
             
             isRunning = true
             
-            var params : NWParameters
-            if (proto == "udp") {
-                params = .udp
-            } else {
-                let options = NWProtocolTCP.Options()
-                options.connectionTimeout = 3
-                params = NWParameters(tls: nil, tcp: options)
-            }
-            connection = NWConnection(host: self.host, port: self.port, using: params)
+            connection = NWConnection(host: self.host, port: self.port, using: createNWParameters())
             connection!.stateUpdateHandler = stateDidChange(to:)
             if (shouldReceive()) {
                 doReceive(connection!)
@@ -52,6 +44,16 @@ class TallyClient {
             
             print("TallyClient: connection started \(host) \(port)")
         }
+    }
+    
+    func createNWParameters() -> NWParameters {
+        if (proto == "udp") {
+            return .udp
+        }
+        
+        let options = NWProtocolTCP.Options()
+        options.connectionTimeout = 3
+        return NWParameters(tls: nil, tcp: options)
     }
     
     private func stateDidChange(to state: NWConnection.State) {
@@ -104,8 +106,8 @@ class TallyClient {
             if (error != nil) {
                 print("TallyClient: connection did fail, error: \(error!)")
                 print("TallyClient: reconnecting in 2 seconds")
-                queue.asyncAfter(deadline: .now() + .seconds(2), execute: { [unowned self] in
-                    self.start()
+                queue.asyncAfter(deadline: .now() + .seconds(2), execute: { [weak self] in
+                    self?.start()
                 })
             }
         }

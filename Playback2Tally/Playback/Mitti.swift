@@ -3,13 +3,13 @@ import OSCKit
 
 class Mitti: Playback, OSCPacketDestination {
     
-    let state: State!
+    let state: PlaybackState!
     var client: OSCClient!
     var server: OSCServer!
     var lastHash: String!
     
     init(feedbackPort: UInt16 = 1234, mittiHost: String = "localhost", mittiPort: UInt16 = 51000) {
-        state = State()
+        state = PlaybackState()
         server = OSCServer()
         server.port = feedbackPort
         server.delegate = self

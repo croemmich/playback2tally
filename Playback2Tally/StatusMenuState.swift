@@ -15,7 +15,7 @@ class StatusMenuState: NSObject, NSMenuDelegate {
 
     var statusItem: NSStatusItem!
     var renderMenuUpdates = false
-    var lastState : State?
+    var lastState : PlaybackState?
     
     init(_ menu: NSMenu) {
         self.menu = menu
@@ -84,7 +84,7 @@ class StatusMenuState: NSObject, NSMenuDelegate {
     }
     
     @objc func onDidUpdateState(_ notification: Notification) {
-        let state = notification.userInfo!["state"] as! State
+        let state = notification.userInfo!["state"] as! PlaybackState
         self.lastState = state
         if (renderMenuUpdates) {
             renderMenuState()

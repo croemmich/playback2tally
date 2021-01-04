@@ -1,6 +1,6 @@
 import Cocoa
 
-class State: NSCopying {
+class PlaybackState: NSCopying {
     
     public var playing: Bool = false
     
@@ -23,7 +23,7 @@ class State: NSCopying {
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        let s = State()
+        let s = PlaybackState()
         s.playing = playing
         s.cueName = cueName
         s.timeTotal = timeTotal

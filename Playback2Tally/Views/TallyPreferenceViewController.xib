@@ -17,6 +17,7 @@
                 <outlet property="udmAddressTotalTime" destination="5jd-Ka-exe" id="V2m-dQ-Gm1"/>
                 <outlet property="udmHostField" destination="xxL-kh-GpV" id="S7k-ZE-id1"/>
                 <outlet property="udmPortField" destination="BNf-47-YBQ" id="val-YS-rXC"/>
+                <outlet property="udmProto" destination="7vF-Ew-q8B" id="P9N-su-3TW"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vxH-Vd-bpP"/>
             </connections>
         </customObject>
@@ -25,78 +26,6 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe">
             <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
             <subviews>
-                <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYs-py-yNe">
-                    <rect key="frame" x="149" y="216" width="183" height="84"/>
-                    <rows>
-                        <gridRow id="EOV-Ib-1bG"/>
-                        <gridRow id="HrO-l8-uoT"/>
-                        <gridRow id="UQQ-RS-6V1"/>
-                    </rows>
-                    <columns>
-                        <gridColumn xPlacement="trailing" id="lzG-Ga-Y2Z"/>
-                        <gridColumn id="7dv-95-pF9"/>
-                    </columns>
-                    <gridCells>
-                        <gridCell row="EOV-Ib-1bG" column="lzG-Ga-Y2Z" id="0sE-oq-mBD">
-                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-KI-rOr">
-                                <rect key="frame" x="-2" y="63" width="37" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Host:" id="Ydg-o8-B9f">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </gridCell>
-                        <gridCell row="EOV-Ib-1bG" column="7dv-95-pF9" id="PkF-NB-VTc">
-                            <textField key="contentView" toolTip="The hostname or IP address to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-kh-GpV">
-                                <rect key="frame" x="43" y="63" width="140" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="qe4-qc-9Js"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="E9m-qz-XTc">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <accessibility description="Host"/>
-                                <connections>
-                                    <outlet property="delegate" destination="-2" id="fdl-Wp-4ik"/>
-                                    <outlet property="nextKeyView" destination="BNf-47-YBQ" id="WG8-gk-rvR"/>
-                                </connections>
-                            </textField>
-                        </gridCell>
-                        <gridCell row="HrO-l8-uoT" column="lzG-Ga-Y2Z" id="uMV-Kt-PhF">
-                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-oR-XAR">
-                                <rect key="frame" x="1" y="36" width="34" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Port:" id="R3E-Xx-BK2">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </gridCell>
-                        <gridCell row="HrO-l8-uoT" column="7dv-95-pF9" id="Jz5-xT-Lk3">
-                            <textField key="contentView" toolTip="The port number to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNf-47-YBQ">
-                                <rect key="frame" x="43" y="36" width="70" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="GF2-E3-fpM"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="AmE-lO-dTb">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <accessibility description="Port"/>
-                                <connections>
-                                    <outlet property="delegate" destination="-2" id="V6Y-TE-2e0"/>
-                                    <outlet property="nextKeyView" destination="9G7-20-kVX" id="Lks-CX-jAf"/>
-                                </connections>
-                            </textField>
-                        </gridCell>
-                        <gridCell row="UQQ-RS-6V1" column="lzG-Ga-Y2Z" id="Kdt-ZB-AEd"/>
-                        <gridCell row="UQQ-RS-6V1" column="7dv-95-pF9" id="8nv-k9-tNR"/>
-                    </gridCells>
-                </gridView>
                 <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a2u-ON-y0h">
                     <rect key="frame" x="147" y="20" width="187" height="183"/>
                     <rows>
@@ -297,6 +226,108 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYs-py-yNe">
+                    <rect key="frame" x="87" y="252" width="307" height="48"/>
+                    <rows>
+                        <gridRow yPlacement="center" id="EOV-Ib-1bG"/>
+                        <gridRow yPlacement="center" id="HrO-l8-uoT"/>
+                    </rows>
+                    <columns>
+                        <gridColumn xPlacement="trailing" id="lzG-Ga-Y2Z"/>
+                        <gridColumn id="7dv-95-pF9"/>
+                        <gridColumn id="9I0-s2-sS8"/>
+                        <gridColumn id="EtA-os-piD"/>
+                    </columns>
+                    <gridCells>
+                        <gridCell row="EOV-Ib-1bG" column="lzG-Ga-Y2Z" id="0sE-oq-mBD">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-KI-rOr">
+                                <rect key="frame" x="2" y="30" width="37" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Host:" id="Ydg-o8-B9f">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="EOV-Ib-1bG" column="7dv-95-pF9" id="PkF-NB-VTc">
+                            <textField key="contentView" toolTip="The hostname or IP address to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-kh-GpV">
+                                <rect key="frame" x="47" y="27" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="qe4-qc-9Js"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="E9m-qz-XTc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Host"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="fdl-Wp-4ik"/>
+                                    <outlet property="nextKeyView" destination="BNf-47-YBQ" id="WG8-gk-rvR"/>
+                                </connections>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="EOV-Ib-1bG" column="9I0-s2-sS8" id="eM7-re-yoZ">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-oR-XAR">
+                                <rect key="frame" x="195" y="30" width="34" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Port:" id="R3E-Xx-BK2">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="EOV-Ib-1bG" column="EtA-os-piD" id="ugm-vg-x7j">
+                            <textField key="contentView" toolTip="The port number to send TSL updates" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNf-47-YBQ">
+                                <rect key="frame" x="237" y="27" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="GF2-E3-fpM"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="AmE-lO-dTb">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility description="Port"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="V6Y-TE-2e0"/>
+                                    <outlet property="nextKeyView" destination="7vF-Ew-q8B" id="DNv-Oj-77f"/>
+                                </connections>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="HrO-l8-uoT" column="lzG-Ga-Y2Z" id="uMV-Kt-PhF">
+                            <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z74-F0-nNE">
+                                <rect key="frame" x="-2" y="3" width="41" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Proto:" id="Cx4-Yj-hG4">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </gridCell>
+                        <gridCell row="HrO-l8-uoT" column="7dv-95-pF9" id="Jz5-xT-Lk3">
+                            <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-Ew-q8B">
+                                <rect key="frame" x="45" y="-3" width="62" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="tcp" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4vt-Cs-JYx" id="Dsk-kt-zql">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="BGP-J3-3V8">
+                                        <items>
+                                            <menuItem title="tcp" state="on" id="4vt-Cs-JYx"/>
+                                            <menuItem title="udp" id="JDv-AV-mdr"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popupButtonSelected:" target="-2" id="hec-rU-bUm"/>
+                                    <outlet property="nextKeyView" destination="9G7-20-kVX" id="Mmd-gV-MKq"/>
+                                </connections>
+                            </popUpButton>
+                        </gridCell>
+                        <gridCell row="HrO-l8-uoT" column="9I0-s2-sS8" id="TwA-F5-ICF"/>
+                        <gridCell row="HrO-l8-uoT" column="EtA-os-piD" id="Yyh-SY-zp0"/>
+                    </gridCells>
+                </gridView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="width" constant="480" id="J7H-mj-tDU"/>

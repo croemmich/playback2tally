@@ -4,6 +4,7 @@ import Defaults
 class Manager {
         
     var tally: TallyClient?
+    var tallyServer: TallyServer?
     var playback: Playback?
     
     var preferenceObservers = [Defaults.Observation]()
@@ -12,11 +13,15 @@ class Manager {
         NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateState(_:)), name: .didUpdateState, object: nil)
         
         setupTally()
+        setupTallyServer()
         setupPlayback()
         
         self.preferenceObservers = [
             Defaults.observe(keys: .udmHost, .udmPort, .udmProto, options: []) {
                 self.setupTally()
+            },
+            Defaults.observe(keys: .udmServerPort, .udmServerProto, options: []) {
+                self.setupTallyServer()
             },
             Defaults.observe(keys: .playbackVariant, options: []) {
                 self.setupPlayback()
@@ -62,14 +67,25 @@ class Manager {
         tally?.start()
     }
     
+    func setupTallyServer() {
+        print("setupTallyServer")
+        
+        tallyServer?.disconnect()
+        
+        if (Defaults[.udmServerPort] != 0) {
+            tallyServer = TallyServer(port: Defaults[.udmServerPort], proto: Defaults[.udmServerProto])
+            tallyServer?.start()
+        }
+    }
+    
     @objc func onDidUpdateState(_ notification: Notification) {
-        let state = notification.userInfo!["state"] as! State
+        let state = notification.userInfo!["state"] as! PlaybackState
         print("Observed state: playing: \(state.playing) cueName: \(state.cueName) timeTotal: \(state.timeTotal) timeLeft: \(state.timeLeft) timeElapsed: \(state.timeElapsed) previousCueName: \(state.previousCueName) nextCueName: \(state.nextCueName)")
 
         sendTallyUpdatesForState(state: state)
     }
     
-    func sendTallyUpdatesForState(state: State) {
+    func sendTallyUpdatesForState(state: PlaybackState) {
         sendTallyUpdate(Defaults[.udmAddressCueName], state.playing, state.cueName)
         sendTallyUpdate(Defaults[.udmAddressTimeTotal], state.playing, state.timeTotal.stringFromTimeInterval())
         sendTallyUpdate(Defaults[.udmAddressTimeLeft], state.playing, state.timeLeft.stringFromTimeInterval())

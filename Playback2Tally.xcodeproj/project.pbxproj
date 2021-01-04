@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745FA0525A2DFC600F8755B /* TallyServer.swift */; };
 		D7792CAF25994419005B8158 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CAE25994419005B8158 /* Time.swift */; };
 		D7792CCC25994454005B8158 /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCA25994454005B8158 /* Playback.swift */; };
 		D7792CCD25994454005B8158 /* Mitti.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCB25994454005B8158 /* Mitti.swift */; };
@@ -33,7 +34,7 @@
 		D7986CBF2598E20800CB0F6D /* PlaybackToTallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */; };
 		D7986CD72598E23400CB0F6D /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = D7986CD62598E23400CB0F6D /* OSCKit */; };
 		D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D802598FA1000CB0F6D /* Preferences.swift */; };
-		D7986D832598FA1000CB0F6D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D812598FA1000CB0F6D /* State.swift */; };
+		D7986D832598FA1000CB0F6D /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7986D812598FA1000CB0F6D /* PlaybackState.swift */; };
 		D7E7644B259BF2CF003ED745 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = D7E7644A259BF2CF003ED745 /* Defaults */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D745FA0525A2DFC600F8755B /* TallyServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyServer.swift; sourceTree = "<group>"; };
 		D7792CAE25994419005B8158 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		D7792CCA25994454005B8158 /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playback.swift; sourceTree = "<group>"; };
 		D7792CCB25994454005B8158 /* Mitti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mitti.swift; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		D7986CBE2598E20800CB0F6D /* PlaybackToTallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackToTallyUITests.swift; sourceTree = "<group>"; };
 		D7986CC02598E20800CB0F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7986D802598FA1000CB0F6D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		D7986D812598FA1000CB0F6D /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		D7986D812598FA1000CB0F6D /* PlaybackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				D7792CDD25994470005B8158 /* UDMPacketTests.swift */,
 				D7792CD32599445A005B8158 /* TallyClient.swift */,
 				D7792CDB25994470005B8158 /* TallyClientTests.swift */,
+				D745FA0525A2DFC600F8755B /* TallyServer.swift */,
 				D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */,
 				D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */,
 			);
@@ -213,7 +216,7 @@
 				D7986CAA2598E20800CB0F6D /* Playback2Tally.entitlements */,
 				D7792E0A259BB5CC005B8158 /* Manager.swift */,
 				D7986D802598FA1000CB0F6D /* Preferences.swift */,
-				D7986D812598FA1000CB0F6D /* State.swift */,
+				D7986D812598FA1000CB0F6D /* PlaybackState.swift */,
 				D7792E10259BC182005B8158 /* StatusMenuState.swift */,
 				D7792CAD25994419005B8158 /* Extensions */,
 				D7792CC925994454005B8158 /* Playback */,
@@ -416,12 +419,13 @@
 				D7792D272599463F005B8158 /* UDMPacket.swift in Sources */,
 				D7792DC72599DA43005B8158 /* GeneralPreferenceViewController.swift in Sources */,
 				D7792CAF25994419005B8158 /* Time.swift in Sources */,
+				D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */,
 				D7792CCD25994454005B8158 /* Mitti.swift in Sources */,
 				D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */,
 				D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */,
 				D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */,
 				D7792CCC25994454005B8158 /* Playback.swift in Sources */,
-				D7986D832598FA1000CB0F6D /* State.swift in Sources */,
+				D7986D832598FA1000CB0F6D /* PlaybackState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
