@@ -10,7 +10,7 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
 
     @IBOutlet weak var udmHostField: NSTextField!
     @IBOutlet weak var udmPortField: NSTextField!
-    @IBOutlet weak var udmProto: NSPopUpButton!
+    @IBOutlet weak var udmProtoPopUp: NSPopUpButton!
     @IBOutlet weak var udmAddressCueName: NSPopUpButton!
     @IBOutlet weak var udmAddressTotalTime: NSPopUpButton!
     @IBOutlet weak var udmAddressTimeLeft: NSPopUpButton!
@@ -29,8 +29,8 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
         udmPortField.integerValue = Defaults[.udmPort]
         udmPortField.formatter = portNumberValidator()
         
-        udmProto.selectItem(withTitle: Defaults[.udmProto])
-        udmProto.autoenablesItems = false
+        udmProtoPopUp.selectItem(withTitle: (Defaults[.udmProto].rawValue))
+        udmProtoPopUp.autoenablesItems = false
   
         addressPopUps = [udmAddressCueName, udmAddressTotalTime, udmAddressTimeLeft, udmAddressTimeElapsed, udmAddressPreviousCueName, udmAddressNextCueName, udmAddressSelectedCueName]
         for popup in addressPopUps! {
@@ -79,8 +79,8 @@ final class TallyPreferenceViewController: NSViewController, PreferencePane, NST
     
     @IBAction func popupButtonSelected(_ sender: Any) {
         if let sender = sender as? NSPopUpButton {
-            if sender == udmProto {
-                Defaults[.udmProto] = sender.selectedItem!.title
+            if sender == udmProtoPopUp {
+                Defaults[.udmProto] = UdmProtocol.init(rawValue: sender.selectedItem!.title)!
                 return
             }
             

@@ -63,8 +63,10 @@ class Manager {
         
         tally?.disconnect()
         
-        tally = TallyClient(host: Defaults[.udmHost], port: Defaults[.udmPort], proto: Defaults[.udmProto])
-        tally?.start()
+        if(Defaults[.udmHost] != "" && Defaults[.udmPort] != 0) {
+            tally = TallyClient(host: Defaults[.udmHost], port: Defaults[.udmPort], proto: Defaults[.udmProto].rawValue)
+            tally?.start()
+        }
     }
     
     func setupTallyServer() {
@@ -73,7 +75,7 @@ class Manager {
         tallyServer?.disconnect()
         
         if (Defaults[.udmServerPort] != 0) {
-            tallyServer = TallyServer(port: Defaults[.udmServerPort], proto: Defaults[.udmServerProto])
+            tallyServer = TallyServer(port: Defaults[.udmServerPort], proto: Defaults[.udmServerProto].rawValue)
             tallyServer?.start()
         }
     }

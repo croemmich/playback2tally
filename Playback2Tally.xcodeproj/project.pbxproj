@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D727CE5225A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */; };
+		D727CE5C25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */; };
+		D727CE6025A316A3002629DC /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE5F25A316A3002629DC /* NSColor.swift */; };
 		D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745FA0525A2DFC600F8755B /* TallyServer.swift */; };
-		D7792CAF25994419005B8158 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CAE25994419005B8158 /* Time.swift */; };
+		D7792CAF25994419005B8158 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CAE25994419005B8158 /* TimeInterval.swift */; };
 		D7792CCC25994454005B8158 /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCA25994454005B8158 /* Playback.swift */; };
 		D7792CCD25994454005B8158 /* Mitti.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCB25994454005B8158 /* Mitti.swift */; };
 		D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */; };
@@ -69,8 +72,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyOverlayPreferenceViewController.swift; sourceTree = "<group>"; };
+		D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TallyOverlayPreferenceViewController.xib; sourceTree = "<group>"; };
+		D727CE5F25A316A3002629DC /* NSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
 		D745FA0525A2DFC600F8755B /* TallyServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyServer.swift; sourceTree = "<group>"; };
-		D7792CAE25994419005B8158 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		D7792CAE25994419005B8158 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		D7792CCA25994454005B8158 /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playback.swift; sourceTree = "<group>"; };
 		D7792CCB25994454005B8158 /* Mitti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mitti.swift; sourceTree = "<group>"; };
 		D7792CD22599445A005B8158 /* UDMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDMPacket.swift; sourceTree = "<group>"; };
@@ -135,7 +141,8 @@
 		D7792CAD25994419005B8158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D7792CAE25994419005B8158 /* Time.swift */,
+				D7792CAE25994419005B8158 /* TimeInterval.swift */,
+				D727CE5F25A316A3002629DC /* NSColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +180,8 @@
 				D7792DF12599E855005B8158 /* PlaybackPreferenceViewController.xib */,
 				D7792DF7259A676E005B8158 /* TallyPreferenceViewController.swift */,
 				D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */,
+				D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */,
+				D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7986CA52598E20800CB0F6D /* Assets.xcassets in Resources */,
+				D727CE5C25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib in Resources */,
 				D7986CA82598E20800CB0F6D /* Main.storyboard in Resources */,
 				D7792DFC259A678A005B8158 /* TallyPreferenceViewController.xib in Resources */,
 				D7792DF22599E855005B8158 /* PlaybackPreferenceViewController.xib in Resources */,
@@ -418,7 +428,7 @@
 				D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */,
 				D7792D272599463F005B8158 /* UDMPacket.swift in Sources */,
 				D7792DC72599DA43005B8158 /* GeneralPreferenceViewController.swift in Sources */,
-				D7792CAF25994419005B8158 /* Time.swift in Sources */,
+				D7792CAF25994419005B8158 /* TimeInterval.swift in Sources */,
 				D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */,
 				D7792CCD25994454005B8158 /* Mitti.swift in Sources */,
 				D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */,
@@ -426,6 +436,8 @@
 				D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */,
 				D7792CCC25994454005B8158 /* Playback.swift in Sources */,
 				D7986D832598FA1000CB0F6D /* PlaybackState.swift in Sources */,
+				D727CE6025A316A3002629DC /* NSColor.swift in Sources */,
+				D727CE5225A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

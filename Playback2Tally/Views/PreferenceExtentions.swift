@@ -65,14 +65,18 @@ extension PreferencePane {
         field.subviews.removeAll()
     }
     
-    func portNumberValidator() -> NumberFormatter {
+    func integerValidatorBetween(_ min: Int, _ max: Int) -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.allowsFloats = false
         formatter.hasThousandSeparators = false
-        formatter.minimum = 1
-        formatter.maximum = 65535
+        formatter.minimum = NSNumber(value: min)
+        formatter.maximum = NSNumber(value: max)
         
         return formatter
+    }
+    
+    func portNumberValidator() -> NumberFormatter {
+        return integerValidatorBetween(1, 65535)
     }
     
     func notEmptyStringValidator() -> StringValidator {

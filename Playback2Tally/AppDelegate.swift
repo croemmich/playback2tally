@@ -35,7 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         preferencePanes: [
             GeneralPreferenceViewController(),
             TallyPreferenceViewController(),
-            PlaybackPreferenceViewController()
+            PlaybackPreferenceViewController(),
+            TallyOverlayPreferenceViewController()
         ],
         style: .segmentedControl,
         animated: true

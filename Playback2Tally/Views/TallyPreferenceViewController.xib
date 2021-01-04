@@ -17,7 +17,7 @@
                 <outlet property="udmAddressTotalTime" destination="5jd-Ka-exe" id="V2m-dQ-Gm1"/>
                 <outlet property="udmHostField" destination="xxL-kh-GpV" id="S7k-ZE-id1"/>
                 <outlet property="udmPortField" destination="BNf-47-YBQ" id="val-YS-rXC"/>
-                <outlet property="udmProto" destination="7vF-Ew-q8B" id="P9N-su-3TW"/>
+                <outlet property="udmProtoPopUp" destination="7vF-Ew-q8B" id="P9N-su-3TW"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vxH-Vd-bpP"/>
             </connections>
         </customObject>

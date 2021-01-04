@@ -69,15 +69,17 @@ class TallyServer {
 
     private func didAccept(conn: NWConnection) {
         print("TallyServer: new connection, conn: \(conn)")
-        queue.async { [unowned self] in
-            connections.append(conn)
-            doReceive(conn)
-            conn.start(queue: .global(qos: .utility))
+        queue.async { [weak self] in
+            self?.connections.append(conn)
+            self?.doReceive(conn)
+            if (self != nil) {
+                conn.start(queue: .global(qos: .utility))
+            }
         }
     }
     
     private func doReceive(_ conn: NWConnection) {
-        conn.receive(minimumIncompleteLength: 1, maximumLength: 18) { [unowned self] (data, _, isComplete, error) in
+        conn.receive(minimumIncompleteLength: 1, maximumLength: 18) { [weak self] (data, _, isComplete, error) in
             if let data = data, !data.isEmpty {
                 print("TallyServer: did receive, data: \(data as NSData)")
                 if (data.count == 18) {
@@ -87,12 +89,12 @@ class TallyServer {
                     print("TallyServer: incorrect packet length")
                 }
             }
-            if isComplete && proto == "tcp" {
-                connectionDidEnd(conn)
+            if isComplete && self?.proto == "tcp" {
+                self?.connectionDidEnd(conn)
             } else if let error = error {
-                connectionDidEnd(conn, error)
+                self?.connectionDidEnd(conn, error)
             } else {
-                self.doReceive(conn)
+                self?.doReceive(conn)
             }
         }
     }
