@@ -15,7 +15,7 @@ class Manager {
         setupPlayback()
         
         self.preferenceObservers = [
-            Defaults.observe(keys: .udmHost, .udmPort, options: []) {
+            Defaults.observe(keys: .udmHost, .udmPort, .udmProto, options: []) {
                 self.setupTally()
             },
             Defaults.observe(keys: .playbackVariant, options: []) {
@@ -24,7 +24,6 @@ class Manager {
             Defaults.observe(keys: .mittiFeedbackPort, .mittiHost, .mittiPort, options: []) {
                 self.setupPlayback()
             }
-            
         ]
     }
     
@@ -59,7 +58,8 @@ class Manager {
         
         tally?.disconnect()
         
-        tally = TalleyConnection(host: Defaults[.udmHost], port: Defaults[.udmPort])
+        tally = TalleyConnection(host: Defaults[.udmHost], port: Defaults[.udmPort], proto: Defaults[.udmProto])
+        tally?.start()
     }
     
     @objc func onDidUpdateState(_ notification: Notification) {
@@ -79,7 +79,7 @@ class Manager {
         sendTallyUpdate(Defaults[.udmAddressSelectedCueName], state.playing, state.selectedCueName)
     }
     
-    func sendTallyUpdate(_ address: Int, _ isPlaying: Bool, _ display: String) {
+    func sendTallyUpdate(_ address: Int, _ isPlaying: Bool, _ display: String, updateDisplayIfNotPlaying: Bool = true) {
         if (address >= 0) {
             let builder = UDMPacketBuilder()
             builder.address(index: UInt8(address))

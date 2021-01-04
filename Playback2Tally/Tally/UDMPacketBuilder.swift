@@ -1,6 +1,6 @@
 import Cocoa
 
-class UDMPacketBuilder: NSObject {
+class UDMPacketBuilder {
 
     static let displayInvalidCharacterRegex = try! NSRegularExpression(pattern: #"[^\x20-\x7E]"#, options: [])
 

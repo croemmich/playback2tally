@@ -1,6 +1,6 @@
 import Cocoa
 
-class State: NSObject, NSCopying {
+class State: NSCopying {
     
     public var playing: Bool = false
     

@@ -1,4 +1,3 @@
-import Cocoa
 import Defaults
 import Preferences
 
@@ -15,6 +14,7 @@ enum PlaybackVariant: String, CaseIterable, Codable {
 extension Defaults.Keys {
     static let udmHost = Key<String>("udmHost", default: "")
     static let udmPort = Key<Int>("udmPort", default: 5727)
+    static let udmProto = Key<String>("udmProto", default: "tcp")
     static let udmAddressCueName = Key<Int>("udmAddressCueName", default: 0)
     static let udmAddressTimeTotal = Key<Int>("udmAddressTimeTotal", default: 1)
     static let udmAddressTimeLeft = Key<Int>("udmAddressTimeLeft", default: 2)

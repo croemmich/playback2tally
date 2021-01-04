@@ -1,6 +1,6 @@
 import Cocoa
 
-class UDMPacket: NSObject {
+class UDMPacket {
 
     static let tally1 = UInt8(1)
     static let tally2 = UInt8(2)
