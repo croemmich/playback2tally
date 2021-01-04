@@ -3,7 +3,7 @@ import Defaults
 
 class Manager {
         
-    var tally: TalleyConnection?
+    var tally: TallyClient?
     var playback: Playback?
     
     var preferenceObservers = [Defaults.Observation]()
@@ -58,7 +58,7 @@ class Manager {
         
         tally?.disconnect()
         
-        tally = TalleyConnection(host: Defaults[.udmHost], port: Defaults[.udmPort], proto: Defaults[.udmProto])
+        tally = TallyClient(host: Defaults[.udmHost], port: Defaults[.udmPort], proto: Defaults[.udmProto])
         tally?.start()
     }
     

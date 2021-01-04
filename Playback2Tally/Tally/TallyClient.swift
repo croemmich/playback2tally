@@ -29,7 +29,7 @@ class TallyClient {
     func start() {
         queue.async { [unowned self] in
             if (isRunning) {
-                print("Tally: connection already running")
+                print("TallyClient: connection already running")
                 return
             }
             
@@ -50,7 +50,7 @@ class TallyClient {
             }
             connection!.start(queue: DispatchQueue(label: "Tally client requests", qos: .utility))
             
-            print("Tally: connection started \(host) \(port)")
+            print("TallyClient: connection started \(host) \(port)")
         }
     }
     
@@ -68,7 +68,7 @@ class TallyClient {
     }
     
     private func onReady() {
-        print("Tally: connection ready")
+        print("TallyClient: connection ready")
         queue.async { [unowned self] in
             isReady = true
         }
@@ -91,7 +91,7 @@ class TallyClient {
     private func stop(error: Error?) {
         queue.async { [unowned self] in
             if (!isRunning || connection == nil) {
-                print("Tally: connection not running")
+                print("TallyClient: connection not running")
                 return
             }
             
@@ -102,8 +102,8 @@ class TallyClient {
             isReady = false
             
             if (error != nil) {
-                print("Tally: connection did fail, error: \(error!)")
-                print("Tally: reconnecting in 2 seconds")
+                print("TallyClient: connection did fail, error: \(error!)")
+                print("TallyClient: reconnecting in 2 seconds")
                 queue.asyncAfter(deadline: .now() + .seconds(2), execute: { [unowned self] in
                     self.start()
                 })
@@ -126,7 +126,7 @@ class TallyClient {
                         self.stop(error: error)
                         return
                     }
-                    print("Tally: did send, data: \(data as NSData)")
+                    print("TallyClient: did send, data: \(data as NSData)")
                 })
             )
         }

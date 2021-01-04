@@ -12,10 +12,10 @@
 		D7792CCD25994454005B8158 /* Mitti.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCB25994454005B8158 /* Mitti.swift */; };
 		D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */; };
 		D7792CE72599447B005B8158 /* UDMPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDD25994470005B8158 /* UDMPacketTests.swift */; };
-		D7792CEE25994481005B8158 /* TalleyConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */; };
+		D7792CEE25994481005B8158 /* TallyClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDB25994470005B8158 /* TallyClientTests.swift */; };
 		D7792CF225994484005B8158 /* UDMPacketBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */; };
 		D7792D272599463F005B8158 /* UDMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD22599445A005B8158 /* UDMPacket.swift */; };
-		D7792D3125994649005B8158 /* TalleyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD32599445A005B8158 /* TalleyConnection.swift */; };
+		D7792D3125994649005B8158 /* TallyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CD32599445A005B8158 /* TallyClient.swift */; };
 		D7792D7F25998F23005B8158 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D7792D7E25998F23005B8158 /* LaunchAtLogin */; };
 		D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DB12599AC2B005B8158 /* PreferenceExtentions.swift */; };
 		D7792DC72599DA43005B8158 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792DC62599DA43005B8158 /* GeneralPreferenceViewController.swift */; };
@@ -72,9 +72,9 @@
 		D7792CCA25994454005B8158 /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playback.swift; sourceTree = "<group>"; };
 		D7792CCB25994454005B8158 /* Mitti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mitti.swift; sourceTree = "<group>"; };
 		D7792CD22599445A005B8158 /* UDMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDMPacket.swift; sourceTree = "<group>"; };
-		D7792CD32599445A005B8158 /* TalleyConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalleyConnection.swift; sourceTree = "<group>"; };
+		D7792CD32599445A005B8158 /* TallyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TallyClient.swift; sourceTree = "<group>"; };
 		D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDMPacketBuilder.swift; sourceTree = "<group>"; };
-		D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalleyConnectionTests.swift; sourceTree = "<group>"; };
+		D7792CDB25994470005B8158 /* TallyClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyClientTests.swift; sourceTree = "<group>"; };
 		D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMPacketBuilderTests.swift; sourceTree = "<group>"; };
 		D7792CDD25994470005B8158 /* UDMPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMPacketTests.swift; sourceTree = "<group>"; };
 		D7792CFC259944F9005B8158 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 			children = (
 				D7792CD22599445A005B8158 /* UDMPacket.swift */,
 				D7792CDD25994470005B8158 /* UDMPacketTests.swift */,
-				D7792CD32599445A005B8158 /* TalleyConnection.swift */,
-				D7792CDB25994470005B8158 /* TalleyConnectionTests.swift */,
+				D7792CD32599445A005B8158 /* TallyClient.swift */,
+				D7792CDB25994470005B8158 /* TallyClientTests.swift */,
 				D7792CD42599445A005B8158 /* UDMPacketBuilder.swift */,
 				D7792CDC25994470005B8158 /* UDMPacketBuilderTests.swift */,
 			);
@@ -409,7 +409,7 @@
 			files = (
 				D7792DCB2599DA73005B8158 /* PlaybackPreferenceViewController.swift in Sources */,
 				D7792E11259BC182005B8158 /* StatusMenuState.swift in Sources */,
-				D7792D3125994649005B8158 /* TalleyConnection.swift in Sources */,
+				D7792D3125994649005B8158 /* TallyClient.swift in Sources */,
 				D7986CA12598E20700CB0F6D /* AppDelegate.swift in Sources */,
 				D7792CD72599445A005B8158 /* UDMPacketBuilder.swift in Sources */,
 				D7792DF8259A676E005B8158 /* TallyPreferenceViewController.swift in Sources */,
@@ -431,7 +431,7 @@
 			files = (
 				D7792CE72599447B005B8158 /* UDMPacketTests.swift in Sources */,
 				D7792CF225994484005B8158 /* UDMPacketBuilderTests.swift in Sources */,
-				D7792CEE25994481005B8158 /* TalleyConnectionTests.swift in Sources */,
+				D7792CEE25994481005B8158 /* TallyClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

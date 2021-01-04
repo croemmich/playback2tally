@@ -3,7 +3,7 @@ import Network
 
 @testable import Playback2Tally
 
-class TalleyConnectionTests: XCTestCase {
+class TallyClientTests: XCTestCase {
     
     func testSend() throws {
         let packet = UDMPacketBuilder().address(index: 0).tally1().brightnessFull().display(text: "Hello World!").build()
