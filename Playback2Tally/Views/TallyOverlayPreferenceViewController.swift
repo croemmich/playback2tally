@@ -29,7 +29,7 @@ final class TallyOverlayPreferenceViewController: NSViewController, PreferencePa
         udmServerPortField.formatter = portNumberValidator()
         udmServerProtoPopUp.selectItem(withTitle: (Defaults[.udmServerProto].rawValue))
         
-        overlayStylePopUp.selectItem(withTitle: Defaults[.tallyOverlayType].rawValue)
+        overlayStylePopUp.selectItem(withTitle: Defaults[.tallyOverlayStyle].rawValue)
         
         if (Defaults[.tallyOverlayShowLabel]) {
             overlayLabelCheck.state = .on
@@ -96,7 +96,7 @@ final class TallyOverlayPreferenceViewController: NSViewController, PreferencePa
             case udmServerProtoPopUp:
                 Defaults[.udmServerProto] = UdmProtocol.init(rawValue: sender.selectedItem!.title)!
             case overlayStylePopUp:
-                Defaults[.tallyOverlayType] = OverlayType.init(rawValue: sender.selectedItem!.title)!
+                Defaults[.tallyOverlayStyle] = OverlayStyle.init(rawValue: sender.selectedItem!.title)!
             default:
                 break
             }

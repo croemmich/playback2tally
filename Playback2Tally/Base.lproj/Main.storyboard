@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -59,6 +60,18 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Lock Overlay" state="on" id="cXx-x9-QGL" userLabel="Unlock Overlay">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleOverlayMenuItem:" target="Voe-Tx-rLC" id="SHv-XY-Pqq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Overlay" id="hUI-dC-RDm" userLabel="Hide Overlay">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleOverlayMenuItem:" target="Voe-Tx-rLC" id="LRW-LJ-ib8"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
                                                 <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="muk-yO-qNv"/>
@@ -84,10 +97,72 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Playback2Tally" customModuleProvider="target">
                     <connections>
                         <outlet property="menu" destination="uQy-DD-JDr" id="czB-HU-NOm"/>
+                        <outlet property="overlayHighShowMenuItem" destination="hUI-dC-RDm" id="pnG-01-iWT"/>
+                        <outlet property="overlayLockUnlockMenuItem" destination="cXx-x9-QGL" id="uIT-PI-PPk"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-1757" y="-90"/>
+            <point key="canvasLocation" x="-1885" y="-672"/>
+        </scene>
+        <!--Overlay Window-->
+        <scene sceneID="MkQ-e0-xdq">
+            <objects>
+                <windowController storyboardIdentifier="overlayWindow" showSeguePresentationStyle="single" id="onC-ym-82Q" userLabel="Overlay Window" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="tallyOverlay" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="Ro2-aY-Wb5">
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" transient="YES" ignoresCycle="YES" fullScreenNone="YES" fullScreenDisallowsTiling="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="604" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3440" height="1417"/>
+                        <view key="contentView" id="SqP-8O-I2K">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="onC-ym-82Q" id="HLf-go-7ID"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="CB1-AC-3g2" kind="relationship" relationship="window.shadowedContentViewController" id="Ptq-zk-moi"/>
+                    </connections>
+                </windowController>
+                <customObject id="Os7-XL-2UU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1892" y="-362"/>
+        </scene>
+        <!--Overlay View-->
+        <scene sceneID="Fzu-93-bIK">
+            <objects>
+                <viewController id="CB1-AC-3g2" userLabel="Overlay View" customClass="TallyOverlayViewController" customModule="Playback2Tally" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="k89-X7-qfc" userLabel="Overlay" customClass="TallyOverlayView" customModule="Playback2Tally" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-61-NMv">
+                                <rect key="frame" x="0.0" y="253" width="480" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" alignment="center" title="Label" drawsBackground="YES" usesSingleLineMode="YES" id="Zyr-CD-NSy">
+                                    <font key="font" metaFont="systemSemibold" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dgj-61-NMv" secondAttribute="trailing" priority="250" id="UME-8T-7lM"/>
+                            <constraint firstItem="Dgj-61-NMv" firstAttribute="top" secondItem="k89-X7-qfc" secondAttribute="top" priority="750" id="VzG-jy-XxE"/>
+                            <constraint firstItem="Dgj-61-NMv" firstAttribute="leading" secondItem="k89-X7-qfc" secondAttribute="leading" priority="250" id="t9u-5f-gVn"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="label" destination="Dgj-61-NMv" id="YL6-aH-IqY"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tallyView" destination="k89-X7-qfc" id="xdM-NZ-LnD"/>
+                    </connections>
+                </viewController>
+                <customObject id="5YW-2O-fHr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1892" y="122"/>
         </scene>
     </scenes>
 </document>

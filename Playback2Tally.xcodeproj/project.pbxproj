@@ -10,6 +10,8 @@
 		D727CE5225A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */; };
 		D727CE5C25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */; };
 		D727CE6025A316A3002629DC /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE5F25A316A3002629DC /* NSColor.swift */; };
+		D727CE6625A3AA1D002629DC /* TallyOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE6525A3AA1D002629DC /* TallyOverlayViewController.swift */; };
+		D727CE7225A3B422002629DC /* TallyOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727CE7125A3B422002629DC /* TallyOverlayView.swift */; };
 		D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745FA0525A2DFC600F8755B /* TallyServer.swift */; };
 		D7792CAF25994419005B8158 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CAE25994419005B8158 /* TimeInterval.swift */; };
 		D7792CCC25994454005B8158 /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7792CCA25994454005B8158 /* Playback.swift */; };
@@ -75,6 +77,8 @@
 		D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyOverlayPreferenceViewController.swift; sourceTree = "<group>"; };
 		D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TallyOverlayPreferenceViewController.xib; sourceTree = "<group>"; };
 		D727CE5F25A316A3002629DC /* NSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
+		D727CE6525A3AA1D002629DC /* TallyOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyOverlayViewController.swift; sourceTree = "<group>"; };
+		D727CE7125A3B422002629DC /* TallyOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyOverlayView.swift; sourceTree = "<group>"; };
 		D745FA0525A2DFC600F8755B /* TallyServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TallyServer.swift; sourceTree = "<group>"; };
 		D7792CAE25994419005B8158 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		D7792CCA25994454005B8158 /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playback.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				D7792DFB259A678A005B8158 /* TallyPreferenceViewController.xib */,
 				D727CE5125A2FEE1002629DC /* TallyOverlayPreferenceViewController.swift */,
 				D727CE5B25A2FF8B002629DC /* TallyOverlayPreferenceViewController.xib */,
+				D727CE6525A3AA1D002629DC /* TallyOverlayViewController.swift */,
+				D727CE7125A3B422002629DC /* TallyOverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D727CE6625A3AA1D002629DC /* TallyOverlayViewController.swift in Sources */,
 				D7792DCB2599DA73005B8158 /* PlaybackPreferenceViewController.swift in Sources */,
 				D7792E11259BC182005B8158 /* StatusMenuState.swift in Sources */,
 				D7792D3125994649005B8158 /* TallyClient.swift in Sources */,
@@ -431,6 +438,7 @@
 				D7792CAF25994419005B8158 /* TimeInterval.swift in Sources */,
 				D745FA0625A2DFC600F8755B /* TallyServer.swift in Sources */,
 				D7792CCD25994454005B8158 /* Mitti.swift in Sources */,
+				D727CE7225A3B422002629DC /* TallyOverlayView.swift in Sources */,
 				D7986D822598FA1000CB0F6D /* Preferences.swift in Sources */,
 				D7792DB22599AC2B005B8158 /* PreferenceExtentions.swift in Sources */,
 				D7792E0B259BB5CC005B8158 /* Manager.swift in Sources */,

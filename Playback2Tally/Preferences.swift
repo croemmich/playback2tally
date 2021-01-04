@@ -17,7 +17,7 @@ enum UdmProtocol: String, CaseIterable, Codable {
     case udp = "udp"
 }
 
-enum OverlayType: String, CaseIterable, Codable {
+enum OverlayStyle: String, CaseIterable, Codable {
     case box = "box"
     case border = "border"
 }
@@ -38,13 +38,15 @@ extension Defaults.Keys {
     static let udmServerPort = Key<Int>("udmServerPort", default: 9800)
     static let udmServerProto = Key<UdmProtocol>("udmServerProto", default: .udp)
     
-    static let tallyOverlayType = Key<OverlayType>("tallyOverlayType", default: .box)
+    static let tallyOverlayStyle = Key<OverlayStyle>("tallyOverlayStyle", default: .box)
     static let tallyOverlayShowLabel = Key<Bool>("tallyOverlayShowLabel", default: false)
     static let tallyOverlayOpacity = Key<Float>("tallyOverlayOpacity", default: 1.0)
     static let tallyOverlayTallyAddress = Key<Int>("tallyOverlayTallyAddress", default: -1)
     static let tallyOverlayTallyColor1 = Key<String>("tallyOverlayTallyColor1", default: "00ff00")
     static let tallyOverlayTallyColor2 = Key<String>("tallyOverlayTallyColor2", default: "ff0000")
     static let tallyOverlayTallyColorBoth = Key<String>("tallyOverlayTallyColorBoth", default: "ffc000")
+    static let tallyOverlayLocked = Key<Bool>("tallyOverlayLocked", default: false)
+    static let tallyOverlayHidden = Key<Bool>("tallyOverlayHidden", default: false)
     
     static let playbackVariant = Key<PlaybackVariant>("playbackVariant", default: .mitti)
 

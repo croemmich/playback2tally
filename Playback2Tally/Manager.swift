@@ -6,6 +6,7 @@ class Manager {
     var tally: TallyClient?
     var tallyServer: TallyServer?
     var playback: Playback?
+    var overlay: NSWindowController?
     
     var preferenceObservers = [Defaults.Observation]()
     
@@ -15,6 +16,7 @@ class Manager {
         setupTally()
         setupTallyServer()
         setupPlayback()
+        setupOverlay()
         
         self.preferenceObservers = [
             Defaults.observe(keys: .udmHost, .udmPort, .udmProto, options: []) {
@@ -28,6 +30,9 @@ class Manager {
             },
             Defaults.observe(keys: .mittiFeedbackPort, .mittiHost, .mittiPort, options: []) {
                 self.setupPlayback()
+            },
+            Defaults.observe(keys: .tallyOverlayTallyAddress, options: []) {
+                self.setupOverlay()
             }
         ]
     }
@@ -78,6 +83,22 @@ class Manager {
             tallyServer = TallyServer(port: Defaults[.udmServerPort], proto: Defaults[.udmServerProto].rawValue)
             tallyServer?.start()
         }
+    }
+    
+    func setupOverlay() {
+        if (Defaults[.tallyOverlayTallyAddress] < 0) {
+            if (overlay != nil) {
+                overlay?.close()
+                overlay = nil
+            }
+            return
+        }
+        
+        if (overlay == nil) {
+            let mainStoryBoard = NSStoryboard(name: "Main", bundle: nil)
+            overlay = mainStoryBoard.instantiateController(withIdentifier: "overlayWindow") as? NSWindowController
+        }
+        overlay?.window?.makeKeyAndOrderFront(nil)
     }
     
     @objc func onDidUpdateState(_ notification: Notification) {
