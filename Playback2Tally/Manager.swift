@@ -10,8 +10,12 @@ class Manager {
     
     var preferenceObservers = [Defaults.Observation]()
     
+    var packets = [UInt8:UDMPacket]()
+    let tallyQueue = DispatchQueue(label: "Send tally operations", qos: .utility)
+    
     func start() {
         NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateState(_:)), name: .didUpdateState, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateTally(_:)), name: .didUpdateTally, object: nil)
         
         setupTally()
         setupTallyServer()
@@ -38,6 +42,7 @@ class Manager {
     }
     
     func stop() {
+        NotificationCenter.default.removeObserver(self, name: .didUpdateState, object: nil)
         NotificationCenter.default.removeObserver(self, name: .didUpdateState, object: nil)
         
         for observer in preferenceObservers {
@@ -120,13 +125,26 @@ class Manager {
     
     func sendTallyUpdate(_ address: Int, _ isPlaying: Bool, _ display: String, updateDisplayIfNotPlaying: Bool = true) {
         if (address >= 0) {
-            let builder = UDMPacketBuilder()
-            builder.address(index: UInt8(address))
-            if (isPlaying) {
-                builder.tally1().brightnessFull()
+            tallyQueue.async { [weak self] in
+                let builder = UDMPacketBuilder()
+                
+                let lastReceivedPacket = self?.packets.first(where: { $0.key == UInt8(address) })?.value
+                if (lastReceivedPacket != nil) {
+                    builder.clone(lastReceivedPacket!)
+                } else {
+                    builder.address(index: UInt8(address))
+                }
+                
+                builder.display(text: display)
+                self?.tally?.send(packet: builder.build())
             }
-            builder.display(text: display)
-            tally?.send(packet: builder.build())
+        }
+    }
+    
+    @objc func onDidUpdateTally(_ notification: Notification) {
+        tallyQueue.async { [weak self] in
+            let packet = notification.userInfo!["packet"] as! UDMPacket
+            self?.packets[packet.getAddress()] = packet
         }
     }
     

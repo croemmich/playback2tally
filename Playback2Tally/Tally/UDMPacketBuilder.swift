@@ -71,6 +71,14 @@ class UDMPacketBuilder {
     func brightnessFull() -> UDMPacketBuilder {
         return brightnessOneHalf().brightnessOneSeventh()
     }
+    
+    @discardableResult
+    func clone(_ packet: UDMPacket) -> UDMPacketBuilder {
+        address = packet.getAddress()
+        control = packet.bytes[1]
+        display = Array(packet.bytes.suffix(from: 2))
+        return self
+    }
 
     func build() -> UDMPacket {
         var payload = Array(repeating: UInt8(0), count: 18)
@@ -79,5 +87,5 @@ class UDMPacketBuilder {
         payload.replaceSubrange(Range(NSMakeRange(2, 16))!, with: display)
         return UDMPacket(bytes: payload)
     }
-
+    
 }
