@@ -27,22 +27,24 @@ class TallyClient {
     }
     
     func start() {
-        queue.async { [unowned self] in
-            if (isRunning) {
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            
+            if (self.isRunning) {
                 print("TallyClient: connection already running")
                 return
             }
             
-            isRunning = true
+            self.isRunning = true
             
-            connection = NWConnection(host: self.host, port: self.port, using: createNWParameters())
-            connection!.stateUpdateHandler = stateDidChange(to:)
-            if (shouldReceive()) {
-                doReceive(connection!)
+            self.connection = NWConnection(host: self.host, port: self.port, using: self.createNWParameters())
+            self.connection!.stateUpdateHandler = self.stateDidChange(to:)
+            if (self.shouldReceive()) {
+                self.doReceive(self.connection!)
             }
-            connection!.start(queue: DispatchQueue(label: "Tally client requests", qos: .utility))
+            self.connection!.start(queue: DispatchQueue(label: "Tally client requests", qos: .utility))
             
-            print("TallyClient: connection started \(host) \(port)")
+            print("TallyClient: connection started \(self.host) \(self.port)")
         }
     }
     
@@ -71,17 +73,17 @@ class TallyClient {
     
     private func onReady() {
         print("TallyClient: connection ready")
-        queue.async { [unowned self] in
-            isReady = true
+        queue.async { [weak self] in
+            self?.isReady = true
         }
     }
     
     private func doReceive(_ conn: NWConnection) {
-        conn.receive(minimumIncompleteLength: 1, maximumLength: 65536) { [unowned self] (_, _, isComplete, error) in
+        conn.receive(minimumIncompleteLength: 1, maximumLength: 65536) { [weak self] (_, _, isComplete, error) in
             if isComplete || error != nil {
                 return
             } else {
-                self.doReceive(conn)
+                self?.doReceive(conn)
             }
         }
     }
@@ -91,22 +93,24 @@ class TallyClient {
     }
 
     private func stop(error: Error?) {
-        queue.async { [unowned self] in
-            if (!isRunning || connection == nil) {
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            
+            if (!self.isRunning || self.connection == nil) {
                 print("TallyClient: connection not running")
                 return
             }
             
-            connection!.stateUpdateHandler = nil
-            connection!.cancel()
+            self.connection!.stateUpdateHandler = nil
+            self.connection!.cancel()
             
-            isRunning = false
-            isReady = false
+            self.isRunning = false
+            self.isReady = false
             
             if (error != nil) {
                 print("TallyClient: connection did fail, error: \(error!)")
                 print("TallyClient: reconnecting in 2 seconds")
-                queue.asyncAfter(deadline: .now() + .seconds(2), execute: { [weak self] in
+                self.queue.asyncAfter(deadline: .now() + .seconds(2), execute: { [weak self] in
                     self?.start()
                 })
             }
@@ -114,8 +118,10 @@ class TallyClient {
     }
     
     func send(packet: UDMPacket) {
-        queue.async { [unowned self] in
-            if (!isReady || connection == nil) {
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            
+            if (!self.isReady || self.connection == nil) {
                 print ("Tally: did not send message, connection not ready")
                 return
             }
@@ -123,9 +129,9 @@ class TallyClient {
             let dataBytes = packet.getBytes()
             let data = Data(bytes: dataBytes, count: dataBytes.count)
             
-            connection!.send(content: data, contentContext: .defaultMessage, isComplete: true, completion: .contentProcessed( { [unowned self] error in
+            self.connection!.send(content: data, contentContext: .defaultMessage, isComplete: true, completion: .contentProcessed( { [weak self] error in
                     if let error = error {
-                        self.stop(error: error)
+                        self?.stop(error: error)
                         return
                     }
                     print("TallyClient: did send, data: \(data as NSData)")

@@ -126,9 +126,11 @@ class Manager {
     func sendTallyUpdate(_ address: Int, _ isPlaying: Bool, _ display: String, updateDisplayIfNotPlaying: Bool = true) {
         if (address >= 0) {
             tallyQueue.async { [weak self] in
+                guard let self = self else { return }
+                
                 let builder = UDMPacketBuilder()
                 
-                let lastReceivedPacket = self?.packets.first(where: { $0.key == UInt8(address) })?.value
+                let lastReceivedPacket = self.packets.first(where: { $0.key == UInt8(address) })?.value
                 if (lastReceivedPacket != nil) {
                     builder.clone(lastReceivedPacket!)
                 } else {
@@ -136,7 +138,7 @@ class Manager {
                 }
                 
                 builder.display(text: display)
-                self?.tally?.send(packet: builder.build())
+                self.tally?.send(packet: builder.build())
             }
         }
     }
