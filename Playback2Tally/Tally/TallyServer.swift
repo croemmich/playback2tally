@@ -16,13 +16,6 @@ class TallyServer {
         self.proto = proto
     }
     
-    func shouldReceive() -> Bool {
-        if (proto == "udp") {
-            return false
-        }
-        return true
-    }
-    
     func createNWParameters() -> NWParameters {
         if (proto == "udp") {
             return .udp
@@ -36,25 +29,27 @@ class TallyServer {
     func start() {
         print("TallyServer: enqueuing start")
         
-        queue.async { [unowned self] in
-            if (listener != nil) {
+        queue.async { [weak self] in
+            guard let self = self else { return }
+
+            if (self.listener != nil) {
                 print("TallyServer: listener already started")
                 return
             }
             
             do {
-                listener = try NWListener(using: createNWParameters(), on: self.port)
+                self.listener = try NWListener(using: self.createNWParameters(), on: self.port)
             } catch {
                 print("TallyServer: failed to listen, error: \(error)")
-                enqueueStart(.now() + .seconds(2))
+                self.enqueueStart(.now() + .seconds(2))
                 return
             }
             
-            listener!.stateUpdateHandler = self.stateDidChange(to:)
-            listener!.newConnectionHandler = self.didAccept(conn:)
-            listener!.start(queue: DispatchQueue(label: "Tally server listen queue", qos: .utility))
+            self.listener!.stateUpdateHandler = self.stateDidChange(to:)
+            self.listener!.newConnectionHandler = self.didAccept(conn:)
+            self.listener!.start(queue: DispatchQueue(label: "Tally server listen queue", qos: .utility))
             
-            print("TallyServer: listening on :\(port)")
+            print("TallyServer: listening on :\(self.port)")
         }
     }
     
@@ -70,32 +65,44 @@ class TallyServer {
     private func didAccept(conn: NWConnection) {
         print("TallyServer: new connection, conn: \(conn)")
         queue.async { [weak self] in
-            self?.connections.append(conn)
-            self?.doReceive(conn)
-            if (self != nil) {
-                conn.start(queue: .global(qos: .utility))
+            guard let self = self else { return }
+            
+            if (self.proto) == "tcp" {
+                self.connections.append(conn)
             }
+            self.doReceive(conn)
+            conn.start(queue: .global(qos: .utility))
         }
     }
     
     private func doReceive(_ conn: NWConnection) {
-        conn.receive(minimumIncompleteLength: 1, maximumLength: 18) { [weak self] (data, _, isComplete, error) in
-            if let data = data, !data.isEmpty {
-                print("TallyServer: did receive, data: \(data as NSData)")
-                if (data.count == 18) {
-                    let packet = UDMPacket(bytes: [UInt8](data))
-                    NotificationCenter.default.post(name: .didUpdateTally, object: nil, userInfo: ["packet": packet])
-                } else {
-                    print("TallyServer: incorrect packet length")
-                }
+        if (self.proto == "tcp") {
+            conn.receive(minimumIncompleteLength: 1, maximumLength: 18) { [weak self] (data, _, isComplete, error) in
+                self?.onReceive(conn: conn, data: data, isComplete: isComplete, error: error)
             }
-            if isComplete && self?.proto == "tcp" {
-                self?.connectionDidEnd(conn)
-            } else if let error = error {
-                self?.connectionDidEnd(conn, error)
+        } else {
+            conn.receiveMessage { [weak self] (data, _, isComplete, error) in
+                self?.onReceive(conn: conn, data: data, isComplete: isComplete, error: error)
+            }
+        }
+    }
+
+    private func onReceive(conn: NWConnection, data: Data?, isComplete: Bool, error: NWError?) {
+        if let data = data, !data.isEmpty {
+            print("TallyServer: did receive, data: \(data as NSData)")
+            if (data.count == 18) {
+                let packet = UDMPacket(bytes: [UInt8](data))
+                NotificationCenter.default.post(name: .didUpdateTally, object: nil, userInfo: ["packet": packet])
             } else {
-                self?.doReceive(conn)
+                print("TallyServer: incorrect packet length")
             }
+        }
+        if isComplete && self.proto == "tcp" {
+            self.connectionDidEnd(conn)
+        } else if let error = error {
+            self.connectionDidEnd(conn, error)
+        } else {
+            self.doReceive(conn)
         }
     }
     
@@ -116,25 +123,27 @@ class TallyServer {
     private func stop(error: Error?) {
         print("TallyServer: enqueuing stop")
         
-        queue.async { [unowned self] in
-            if (listener == nil) {
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            
+            if (self.listener == nil) {
                 print("TallyServer: not listening")
                 return
             }
             
-            listener!.stateUpdateHandler = nil
-            listener!.newConnectionHandler = nil
-            listener!.cancel()
-            listener = nil
+            self.listener!.stateUpdateHandler = nil
+            self.listener!.newConnectionHandler = nil
+            self.listener!.cancel()
+            self.listener = nil
             
-            for conn in connections {
+            for conn in self.connections {
                 conn.cancel()
             }
-            connections.removeAll()
+            self.connections.removeAll()
             
             if (error != nil) {
                 print("TallyServer: listening did fail, error: \(error!)")
-                enqueueStart(.now() + .seconds(2))
+                self.enqueueStart(.now() + .seconds(2))
             }
         }
     }
